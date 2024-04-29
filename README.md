@@ -1,6 +1,7 @@
 # Immiyami 🌍
 
-![Immiyami Logo](https://github.com/SehanArandara/immiyami/assets/99310968/e34afa36-219e-41f4-b149-a8914a6798e2)
+![image](https://github.com/conscience-development/Immiyami/assets/168409117/eb0a364c-38ac-422b-b451-70a04b939835)
+
 
 ## Description
 Welcome to ImmiYami, a platform that connects immigration seekers with trusted service providers. Our platform was founded by immigrants living in various countries including New Zealand, Australia, Japan, United Arab Emirates, and Canada, who understand the challenges and obstacles that come with the immigration process. ✈️🌎
