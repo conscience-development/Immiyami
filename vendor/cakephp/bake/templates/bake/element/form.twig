@@ -1,0 +1,67 @@
+<!--**********************************
+            Content body start
+        ***********************************-->
+                <!-- row -->
+                {% set fields = Bake.filterFields(fields, schema, modelObject) %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"><?= __('{{ action|humanize }} {{ singularHumanName }}') ?></h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                    <?= $this->Form->create(${{ singularVar }}) ?>
+                                        <div class="row">
+                                            <div class="col-xl-12">
+												<fieldset>
+												<?php
+								{% for field in fields %}
+								{%- if field not in primaryKey %}
+									{%- if keyFields[field] is defined %}
+										{%- set fieldData = Bake.columnData(field, schema) %}
+										{%- if fieldData.null %}
+													echo $this->Form->control('{{ field }}', ['options' => ${{ keyFields[field] }}, 'empty' => true,'class'=>'multi-select wide form-control']);
+													{{- "\n" }}
+										{%- else %}
+													echo $this->Form->control('{{ field }}', ['options' => ${{ keyFields[field] }},'class'=>'multi-select wide form-control']);
+													{{- "\n" }}
+										{%- endif %}
+									{%- elseif field not in ['created', 'modified', 'updated'] %}
+										{%- set fieldData = Bake.columnData(field, schema) %}
+										{%- if fieldData.type in ['date', 'datetime', 'time'] and fieldData.null %}
+													echo $this->Form->control('{{ field }}', ['empty' => true,'class'=>'form-control datepicker-default']);
+													{{- "\n" }}
+										{%- else %}
+													echo $this->Form->control('{{ field }}',['class'=>'form-control']);
+													{{- "\n" }}
+										{%- endif %}
+									{%- endif %}
+								{%- endif %}
+								{%- endfor %}
+
+								{%- if associations.BelongsToMany is defined %}
+								{%- for assocName, assocData in associations.BelongsToMany %}
+													echo $this->Form->control('{{ assocData.property }}._ids', ['options' => ${{ assocData.variable }}],'class'=>'multi-select wide form-control');
+													{{- "\n" }}
+								{%- endfor %}
+								{% endif %}
+												?>
+											</fieldset>
+												
+                                            </div>
+                                            <div class="mb-3 mt-3 row">
+												<div class="col-lg-12 align-right">
+													<?= $this->Form->button(__('Submit'),['class'=>'btn btn-primary']) ?>
+												</div>
+											</div>
+                                        </div>
+									<?= $this->Form->end() ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->

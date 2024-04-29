@@ -1,0 +1,14 @@
+CREATE TABLE `immiyami`.`posts_countries` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `country_id` BIGINT(20) NOT NULL , `post_id` BIGINT(20) NOT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE `posts_countries` ADD CONSTRAINT `fk_cuntry_p` FOREIGN KEY (`country_id`) REFERENCES `countries`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `posts_countries` ADD CONSTRAINT `fk_post_p_p` FOREIGN KEY (`post_id`) REFERENCES `posts`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+DROP TABLE IF EXISTS `workingcountries`;
+CREATE TABLE IF NOT EXISTS `workingcountries` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `country_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+COMMIT;
+
+ALTER TABLE `workingcountries` ADD CONSTRAINT `fk_cuntry_ppp` FOREIGN KEY (`country_id`) REFERENCES `countries`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `workingcountries` ADD CONSTRAINT `fk_u` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;

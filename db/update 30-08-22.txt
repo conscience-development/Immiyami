@@ -1,0 +1,77 @@
+ALTER TABLE `coupons` ADD `limitation` BIGINT(20) NULL DEFAULT NULL AFTER `status`;
+ALTER TABLE `videos` ADD `premium` ENUM('0','1') NOT NULL DEFAULT '0' AFTER `file_dir`;
+ALTER TABLE `coupons` CHANGE `limitation` `limitation` BIGINT(20) NULL DEFAULT '1';
+ALTER TABLE `countries` ADD `phone_code` VARCHAR(10) NULL DEFAULT NULL AFTER `name`;
+ALTER TABLE `users` CHANGE `role` `role` ENUM('superuser','admin','user','member','supplier','sponsor') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'member';
+ALTER TABLE `coupons` ADD `price` DECIMAL(12,2) NULL DEFAULT NULL AFTER `code`;
+ALTER TABLE `posts` CHANGE `description` `description` TEXT NULL DEFAULT NULL;
+
+
+
+
+
+
+
+
+ALTER TABLE `users` ADD `q` ENUM('0','1') NOT NULL DEFAULT '0' AFTER `status`;
+ALTER TABLE `users` ADD `q_active` ENUM('0','1') NOT NULL DEFAULT '0' AFTER `q`;
+CREATE TABLE `discussions` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `supplier_id` BIGINT(20) NULL DEFAULT NULL , `member_id` BIGINT(20) NULL DEFAULT NULL , `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `description` TEXT NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE `discussions` ADD CONSTRAINT `fk_supplier` FOREIGN KEY (`supplier_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `discussions` ADD CONSTRAINT `fk_member` FOREIGN KEY (`member_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `users` ADD `qm` ENUM('0','1') NOT NULL DEFAULT '0' AFTER `q_active`;
+
+
+ALTER TABLE `xml_submission_answers` ADD `xml_submission_id` BIGINT(20) NULL DEFAULT NULL AFTER `criteria_answer_id`;
+ALTER TABLE `xml_submission_answers` ADD CONSTRAINT `fk_xml_submission_answers` FOREIGN KEY (`xml_submission_id`) REFERENCES `xml_submissions`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+*************
+ALTER TABLE `xml_sheets` DROP FOREIGN KEY `fk_user_xml_sheets`; ALTER TABLE `xml_sheets` ADD CONSTRAINT `fk_user_xml_sheets` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+
+
+
+ALTER TABLE `payments` ADD `payment_status` VARCHAR(255) NULL DEFAULT NULL AFTER `status`, ADD `payment_currency` VARCHAR(255) NULL DEFAULT NULL AFTER `payment_status`, ADD `txn_id` VARCHAR(255) NULL DEFAULT NULL AFTER `payment_currency`, ADD `custom` TEXT NULL DEFAULT NULL AFTER `txn_id`;
+ALTER TABLE `payments` CHANGE `type` `type` ENUM('member','sponsor') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'member';
+ALTER TABLE `payments` CHANGE `payment_status` `payment_status` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'pending';
+DROP TABLE IF EXISTS `queue_submissions`;
+CREATE TABLE IF NOT EXISTS `queue_submissions` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `message` text COLLATE utf8_unicode_ci,
+  `member_id` bigint(20) DEFAULT NULL,
+  `supplier_id` bigint(20) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=innodb DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+COMMIT;
+ALTER TABLE `queue_submissions` ADD CONSTRAINT `fkmembq` FOREIGN KEY (`member_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `queue_submissions` ADD CONSTRAINT `fksupbq` FOREIGN KEY (`supplier_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+--------------------DONE
+
+
+
+CREATE TABLE `immiyami`.`posts_categories` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `post_id` BIGINT(20) NULL DEFAULT NULL , `category_id` BIGINT(20) NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE `posts_categories` ADD CONSTRAINT `fk_category_p` FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `posts_categories` ADD CONSTRAINT `fk_post_p` FOREIGN KEY (`post_id`) REFERENCES `posts`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `users` ADD `sup_p` ENUM('0','1') NOT NULL DEFAULT '0' AFTER `qm`;
+
+CREATE TABLE `immiyami`.`campaigns` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `start_date` DATETIME NULL DEFAULT NULL , `end_date` DATETIME NULL DEFAULT NULL , `url` TEXT NULL DEFAULT NULL , `status` ENUM('0','1') NOT NULL DEFAULT '0' , `clicks` BIGINT(20) NULL DEFAULT '0' , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE `campaigns` ADD `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `clicks`;
+
+--------------
+
+
+ALTER TABLE `xml_criterias` ADD `help` TEXT NULL DEFAULT NULL AFTER `question`;
+ALTER TABLE `xml_criterias` CHANGE `help` `help_link` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL;
+
+
+//new 23/03/22
+CREATE TABLE `flags` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NULL DEFAULT NULL , `photo` VARCHAR(255) NULL DEFAULT NULL , `photo_dir` VARCHAR(255) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE `xml_countries` ADD `imglink` VARCHAR(255) NULL DEFAULT NULL AFTER `name`;
+
+
+
+ALTER TABLE `posts` ADD `c_status` ENUM('0','1') NOT NULL DEFAULT '1' AFTER `status`;
+
+
+
+ALTER TABLE `posts` ADD `approved_date` DATETIME NULL DEFAULT NULL AFTER `user_id`;

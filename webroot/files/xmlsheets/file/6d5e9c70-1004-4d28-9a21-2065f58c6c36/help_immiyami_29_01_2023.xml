@@ -1,0 +1,1088 @@
+<!-- plz use "_" For space in tags -->
+<Countries>
+  <Australia>
+    <VisaTypes>
+      <StudentVisa>
+        <Category>
+          <Diploma_Bachlor>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" help_link="#" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">15</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">20</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">15</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">10</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <BachelorDegree text="GCE O/L">10</BachelorDegree>
+                <AustrlianDiploma text="GCE A/L">20</AustrlianDiploma>
+                <RecognisedQualification text="GCE A/L and Diploma">30</RecognisedQualification>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="AUD 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="AUD 15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="AUD 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above AUD 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Diploma_Bachlor>
+          <Masters_PHD>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">10</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">15</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">20</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">15</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="20" Question="What is your highest education qualification?">
+                <AL text="GCE A/L" suggestion_text="Complete a Diploma">8</AL>
+                <Diploma text="GCE A/L and Diploma" suggestion_text="Complete a Bachelor digree or Masters">12</Diploma>
+                <Bachelor text="Bachelor digree or Masters base on work experience" suggestion_text="Complete a Bachelor and Postgraduate or Masters">15</Bachelor>SC
+                <Masters text="Bachelor and Postgraduate or Masters" suggestion_text="Complete a Diploma">20</Masters>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <ProfessionalQualificaton UseForSuggestions="true" MaxPoints="10" Question="Do you have any profesional qualification?">
+                <No_Bacherlors text="No" suggestion_text="Complete s professional qualification">0</No_Bacherlors>
+                <Yes text="Yes">10</Yes>
+              </ProfessionalQualificaton>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="AUD 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="AUD 15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="AUD 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above AUD 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Masters_PHD>
+        </Category>
+      </StudentVisa>
+      <InvestorVisa>
+        <Category>
+          <None>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="15" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 25">8</AgeGroup1>
+                <AgeGroup2 text="Age 25 to 33">10</AgeGroup2>
+                <AgeGroup3 text="Age 33 to 40">15</AgeGroup3>
+                <AgeGroup4 text="Age 40 to 44">10</AgeGroup4>
+                <AgeGroup5 text="Above 45">8</AgeGroup5>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="15" Question="What is your highest education qualification?">
+                <Edu1 text="Masters /PHD">15</Edu1>
+                <Edu2 text="Bachelor Degree" suggestion_text="Complete a Masters /PHD">12</Edu2>
+                <Edu3 text="A/L OR Diploma" suggestion_text="Complete a Bachelor Degree">10</Edu3>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="10" Question="What is your English language ability?">
+                <englang1 text="Good" suggestion_text="Improve your english skills to Very Good">5</englang1>
+                <englang2 text="Very Good" suggestion_text="Improve your english skills to Excellent">7</englang2>
+                <englang3 text="Excellent">10</englang3>
+              </EnglishLanguageSkills>
+              <InvestmentAmount UseForSuggestions="true" MaxPoints="20" Question="Whats your investment capacity?">
+                <Amount1 text="AUD 1 Miilion" suggestion_text="Improve investment">10</Amount1>
+                <Amount2 text="AUD 1-3 Miilion" suggestion_text="Improve investment">12</Amount2>
+                <Amount3 text="AUD 3-5 Miilion" suggestion_text="Improve investment">15</Amount3>
+                <Amount4 text="Above 5 Million" suggestion_text="Improve investment">20</Amount4>
+              </InvestmentAmount>
+              <Export UseForSuggestions="true" MaxPoints="10" Question="Does your business export oriented?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Make your investment export oriented">0</No>
+              </Export>
+              <Job_Creation UseForSuggestions="true" MaxPoints="15" Question="How many full time jobs will it create?">
+                <Jobs1 text="less than 3">5</Jobs1>
+                <Jobs2 text="3 to 5">8</Jobs2>
+                <Jobs3 text="5-10">10</Jobs3>
+                <Jobs4 text="More than 10">15</Jobs4>
+              </Job_Creation>
+              <Export_Income UseForSuggestions="true" MaxPoints="10" Question="What is the expected annual income?">
+                <Amount1 text="AUD 100,000  OR Less" suggestion_text="Increase anual income">3</Amount1>
+                <Amount2 text="AUD 100,000 to 500,000" suggestion_text="Increase anual income">5</Amount2>
+                <Amount3 text="AUD  500,000 - 1,000,000" suggestion_text="Increase anual income">7</Amount3>
+                <Amount4 text="Over AUD 1,000,000">10</Amount4>
+              </Export_Income>
+              <Regional UseForSuggestions="true" MaxPoints="5" Question="Do youliketo settle in regional?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Move to regional">0</No>
+              </Regional>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Health1 text="Good">0</Health1>
+                <Health2 text="Very Good">5</Health2>
+                <Health3 text="Excellent">10</Health3>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </None>
+        </Category>
+      </InvestorVisa>
+      <SkillMigration>
+        <Category>
+          <None>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="30" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 24">25</AgeGroup1>
+                <AgeGroup2 text="Age 25 to 32">30</AgeGroup2>
+                <AgeGroup3 text="Age 33 to 39">25</AgeGroup3>
+                <AgeGroup4 text="Age 40 to 44">15</AgeGroup4>
+              </Age>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <englang1 text="Good" suggestion_text="Improve your english skills to Very Good">5</englang1>
+                <englang2 text="Very Good" suggestion_text="Improve your english skills to Excellent">7</englang2>
+                <englang3 text="Excellent">10</englang3>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of Overseas skilled employment (outside Australia) do you have?">
+                <Years1 text="less than 3 Years" suggestion_text="Have more years of work experice">0</Years1>
+                <Years2 text="3-5 Years" suggestion_text="Have more years of work experice">5</Years2>
+                <Years3 text="5-8 Years" suggestion_text="Have more years of work experice">10</Years3>
+                <Years4 text="Over 8 Years">15</Years4>
+              </SkilledEmploymentExperience>
+              <SkilledEmploymentAusExperience UseForSuggestions="true" MaxPoints="20" Question="How many years of Australian skilled employment (in Australia) do you have?">
+                <Years1 text="less than 1 Years" suggestion_text="Have more years of Australian work experice">0</Years1>
+                <Years2 text="1-3 Years" suggestion_text="Have more years of Australian work experice">5</Years2>
+                <Years3 text="3-5 Years" suggestion_text="Have more years of Australian work experice">10</Years3>
+                <Years4 text="5-8 Years" suggestion_text="Have more years of Australian work experice">15</Years4>
+                <Years5 text="Over 8 Years">20</Years5>
+              </SkilledEmploymentAusExperience>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <Edu1 text="Qualification recognized by assessing authority for skilled occupation" suggestion_text="Complete a Bachelor degree">10</Edu1>
+                <Edu2 text="A diploma or trade qualification from an Australian educational institution" suggestion_text="Complete a Bachelor degree">10</Edu2>
+                <Edu3 text="Bachelor degree" suggestion_text="Complete a PHD">20</Edu3>
+                <Edu4 text="PHD">30</Edu4>
+              </EducationalQualification>
+              <SpecialistEducation UseForSuggestions="true" MaxPoints="10" Question="Have you completed a A Masters degree by research or a Doctorate degree from an Australian educational institution that included at least 2 academic years study in a relevant field?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Complete a Masters degree by research or a Doctorate degree from an Australian educational institution">0</No>
+              </SpecialistEducation>
+              <AustralianStudy UseForSuggestions="true" MaxPoints="5" Question="Have you completed a degree, diploma or trade qualification from an Australian educational institution that meets the Australian study requirement?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Complete a degree, diploma or trade qualification from an Australian educational institution that meets the Australian study requirement">0</No>
+              </AustralianStudy>
+              <ProfessionalYear UseForSuggestions="true" MaxPoints="5" Question="Have you completed a Professional Year in Australia?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Complete a Professional Year in Australia">0</No>
+              </ProfessionalYear>
+              <CommunityLanguage UseForSuggestions="true" MaxPoints="5" Question="Do you have recognised qualification in a credentialled community language?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Complete a recognised qualification in a credentialled community language">0</No>
+              </CommunityLanguage>
+              <RegionalStudy UseForSuggestions="true" MaxPoints="5" Question="Did you study in regional Austrlia for more than a year?">
+              	<Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Study in regional Austrlia for more than a year">0</No>
+              </RegionalStudy>
+              <PartnerSkills UseForSuggestions="true" MaxPoints="10" Question="Did you study in regional Austrlia for more than a year?">
+                <partnerSkill1 text="Partner has competent English" suggestion_text="Partner meet age, English and skill criteria">5</partnerSkill1>
+                <partnerSkill2 text="Partner meet age, English and skill criteria">10</partnerSkill2>
+                <partnerSkill3 text="You are single or your partner is an Australian citizen or permanent resident">10</partnerSkill3>
+              </PartnerSkills>
+              <Nomination UseForSuggestions="true" MaxPoints="5" Question="Did you have a state nomination?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Apply for state nomination">0</No>
+              </Nomination>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </None>
+        </Category>
+      </SkillMigration>
+    </VisaTypes>
+  </Australia>
+  <Nethalands>
+    <VisaTypes>
+      <StudentVisa>
+        <Category>
+          <Diploma_Bachlor>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">15</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">20</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">15</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">10</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <BachelorDegree text="GCE O/L">10</BachelorDegree>
+                <AustrlianDiploma text="GCE A/L">20</AustrlianDiploma>
+                <RecognisedQualification text="GCE A/L and Diploma">30</RecognisedQualification>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="EUR 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="EUR15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="EUR 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above EUR 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Diploma_Bachlor>
+          <Masters_PHD>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">10</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">15</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">20</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">15</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="20" Question="What is your highest education qualification?">
+                <AL text="GCE A/L" suggestion_text="Complete a Diploma">8</AL>
+                <Diploma text="GCE A/L and Diploma" suggestion_text="Complete a Bachelor digree or Masters">12</Diploma>
+                <Bachelor text="Bachelor digree or Masters base on work experience" suggestion_text="Complete a Bachelor and Postgraduate or Masters">15</Bachelor>SC
+                <Masters text="Bachelor and Postgraduate or Masters" suggestion_text="Complete a Diploma">20</Masters>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <ProfessionalQualificaton UseForSuggestions="true" MaxPoints="10" Question="Do you have any profesional qualification?">
+                <No_Bacherlors text="No" suggestion_text="Complete s professional qualification">0</No_Bacherlors>
+                <Yes text="Yes">10</Yes>
+              </ProfessionalQualificaton>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="EUR 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="EUR15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="EUR 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above EUR 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Masters_PHD>
+        </Category>
+      </StudentVisa>
+      <InvestorVisa>
+        <Category>
+          <None>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="15" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 25">8</AgeGroup1>
+                <AgeGroup2 text="Age 25 to 33">10</AgeGroup2>
+                <AgeGroup3 text="Age 33 to 40">15</AgeGroup3>
+                <AgeGroup4 text="Age 40 to 44">10</AgeGroup4>
+                <AgeGroup5 text="Above 45">8</AgeGroup5>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="15" Question="What is your highest education qualification?">
+                <Edu1 text="Masters /PHD">15</Edu1>
+                <Edu2 text="Bachelor Degree" suggestion_text="Complete a Masters /PHD">12</Edu2>
+                <Edu3 text="A/L OR Diploma" suggestion_text="Complete a Bachelor Degree">10</Edu3>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="10" Question="What is your English language ability?">
+                <englang1 text="Good" suggestion_text="Improve your english skills to Very Good">5</englang1>
+                <englang2 text="Very Good" suggestion_text="Improve your english skills to Excellent">7</englang2>
+                <englang3 text="Excellent">10</englang3>
+              </EnglishLanguageSkills>
+              <InvestmentAmount UseForSuggestions="true" MaxPoints="20" Question="Whats your investment capacity?">
+                <Amount1 text="EUR 500,000 OR Less" suggestion_text="Improve investment">10</Amount1>
+                <Amount2 text="EUR 500,000- 1 Miilion" suggestion_text="Improve investment">12</Amount2>
+                <Amount3 text="EUR 1-3 Miilion" suggestion_text="Improve investment">15</Amount3>
+                <Amount4 text="EUR 3 Million and above" suggestion_text="Improve investment">20</Amount4>
+              </InvestmentAmount>
+              <Export UseForSuggestions="true" MaxPoints="10" Question="Does your business export oriented?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Make your investment export oriented">0</No>
+              </Export>
+              <Job_Creation UseForSuggestions="true" MaxPoints="15" Question="How many full time jobs will it create?">
+                <Jobs1 text="less than 3">5</Jobs1>
+                <Jobs2 text="3 to 5">8</Jobs2>
+                <Jobs3 text="5-10">10</Jobs3>
+                <Jobs4 text="More than 10">15</Jobs4>
+              </Job_Creation>
+              <Export_Income UseForSuggestions="true" MaxPoints="10" Question="What is the expected annual income?">
+                <Amount1 text="EUR 100,000  OR Less" suggestion_text="Increase anual income">3</Amount1>
+                <Amount2 text="EUR 100,000 to 500,000" suggestion_text="Increase anual income">5</Amount2>
+                <Amount3 text="EUR  500,000 - 1,000,000" suggestion_text="Increase anual income">7</Amount3>
+                <Amount4 text="Over EUR 1,000,000">10</Amount4>
+              </Export_Income>
+              <Regional UseForSuggestions="true" MaxPoints="5" Question="Do youliketo settle in regional?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Move to regional">0</No>
+              </Regional>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Health1 text="Good">0</Health1>
+                <Health2 text="Very Good">5</Health2>
+                <Health3 text="Excellent">10</Health3>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </None>
+        </Category>
+      </InvestorVisa>
+    </VisaTypes>
+  </Nethalands>
+  <Sweden>
+    <VisaTypes>
+      <StudentVisa>
+        <Category>
+          <Diploma_Bachlor>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">15</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">20</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">15</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">10</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <BachelorDegree text="GCE O/L">10</BachelorDegree>
+                <AustrlianDiploma text="GCE A/L">20</AustrlianDiploma>
+                <RecognisedQualification text="GCE A/L and Diploma">30</RecognisedQualification>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount1 text="SEK 10,000-15000" suggestion_text="Increase Funds">8</Amount1>
+                <Amount2 text="SEK 15,000-20,000" suggestion_text="Increase Funds">10</Amount2>
+                <Amount3 text="SEK 20,000-30,000" suggestion_text="Increase Funds">12</Amount3>
+                <Amount4 text="Above SEK 30,000">15</Amount4>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Diploma_Bachlor>
+          <Masters_PHD>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">10</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">15</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">20</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">15</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="20" Question="What is your highest education qualification?">
+                <AL text="GCE A/L" suggestion_text="Complete a Diploma">8</AL>
+                <Diploma text="GCE A/L and Diploma" suggestion_text="Complete a Bachelor digree or Masters">12</Diploma>
+                <Bachelor text="Bachelor digree or Masters base on work experience" suggestion_text="Complete a Bachelor and Postgraduate or Masters">15</Bachelor>SC
+                <Masters text="Bachelor and Postgraduate or Masters" suggestion_text="Complete a Diploma">20</Masters>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <ProfessionalQualificaton UseForSuggestions="true" MaxPoints="10" Question="Do you have any profesional qualification?">
+                <No_Bacherlors text="No" suggestion_text="Complete s professional qualification">0</No_Bacherlors>
+                <Yes text="Yes">10</Yes>
+              </ProfessionalQualificaton>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount1 text="SEK 10,000-15000" suggestion_text="Increase Funds">8</Amount1>
+                <Amount2 text="SEK 15,000-20,000" suggestion_text="Increase Funds">10</Amount2>
+                <Amount3 text="SEK 20,000-30,000" suggestion_text="Increase Funds">12</Amount3>
+                <Amount4 text="Above SEK 30,000">15</Amount4>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Masters_PHD>
+        </Category>
+      </StudentVisa>
+      <InvestorVisa>
+        <Category>
+          <None>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="15" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 25">8</AgeGroup1>
+                <AgeGroup2 text="Age 25 to 33">10</AgeGroup2>
+                <AgeGroup3 text="Age 33 to 40">15</AgeGroup3>
+                <AgeGroup4 text="Age 40 to 44">10</AgeGroup4>
+                <AgeGroup5 text="Above 45">8</AgeGroup5>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="15" Question="What is your highest education qualification?">
+                <Edu1 text="Masters /PHD">15</Edu1>
+                <Edu2 text="Bachelor Degree" suggestion_text="Complete a Masters /PHD">12</Edu2>
+                <Edu3 text="A/L OR Diploma" suggestion_text="Complete a Bachelor Degree">10</Edu3>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="10" Question="What is your English language ability?">
+                <englang1 text="Good" suggestion_text="Improve your english skills to Very Good">5</englang1>
+                <englang2 text="Very Good" suggestion_text="Improve your english skills to Excellent">7</englang2>
+                <englang3 text="Excellent">10</englang3>
+              </EnglishLanguageSkills>
+              <InvestmentAmount UseForSuggestions="true" MaxPoints="20" Question="Whats your investment capacity?">
+                <Amount1 text="SEK 1 Miilion" suggestion_text="Improve investment">10</Amount1>
+                <Amount2 text="SEK 1-3 Miilion" suggestion_text="Improve investment">12</Amount2>
+                <Amount3 text="SEK 3-5 Miilion" suggestion_text="Improve investment">15</Amount3>
+                <Amount4 text="Above SEK 5 Million" suggestion_text="Improve investment">20</Amount4>
+              </InvestmentAmount>
+              <Export UseForSuggestions="true" MaxPoints="10" Question="Does your business export oriented?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Make your investment export oriented">0</No>
+              </Export>
+              <Job_Creation UseForSuggestions="true" MaxPoints="15" Question="How many full time jobs will it create?">
+                <Jobs1 text="less than 3">5</Jobs1>
+                <Jobs2 text="3 to 5">8</Jobs2>
+                <Jobs3 text="5-10">10</Jobs3>
+                <Jobs4 text="More than 10">15</Jobs4>
+              </Job_Creation>
+              <Export_Income UseForSuggestions="true" MaxPoints="10" Question="What is the expected annual income?">
+                <Amount1 text="SEK 100,000  OR Less" suggestion_text="Increase anual income">3</Amount1>
+                <Amount2 text="SEK 100,000 to 500,000" suggestion_text="Increase anual income">5</Amount2>
+                <Amount3 text="SEK  500,000 - 1,000,000" suggestion_text="Increase anual income">7</Amount3>
+                <Amount4 text="Over SEK 1,000,000">10</Amount4>
+              </Export_Income>
+ 			  <Regional UseForSuggestions="true" MaxPoints="5" Question="Do youliketo settle in regional?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Move to regional">0</No>
+              </Regional>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Health1 text="Good">0</Health1>
+                <Health2 text="Very Good">5</Health2>
+                <Health3 text="Excellent">10</Health3>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </None>
+        </Category>
+      </InvestorVisa>
+    </VisaTypes>
+  </Sweden>
+  <Japan>
+    <VisaTypes>
+      <!-- Fiexed-->
+      <StudentVisa>
+        <Category>
+          <LanguageCollege>
+            <Criterias>
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 20">15</AgeGroup1>
+                <AgeGroup2 text="Age 21 to 24">20</AgeGroup2>
+                <AgeGroup3 text="Age 25 to 30">15</AgeGroup3>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <Edu1 text="GCE O/L" suggestion_text="Complete GCE A/L">10</Edu1>
+                <Edu2 text="GCE A/L" suggestion_text="GCE A/L and Diploma">20</Edu2>
+                <Edu3 text="GCE A/L and Diploma">30</Edu3>
+              </EducationalQualification>
+              <JapaneseLanguageSkills UseForSuggestions="true" MaxPoints="15" Question="Do you have Japanese language qualification?">
+                <lang1 text="None" suggestion_text="Complete Japanese Language NAT-TEST">0</lang1>
+                <lang2 text="The Japanese Language NAT-TEST" suggestion_text="Complete Japanese Language Proficiency Test">12</lang2>
+                <lang3 text="The Japanese Language Proficiency Test">15</lang3>
+              </JapaneseLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="5" Question="How many years of experience do you have?">
+                <Years1 text="Less than 2 years" suggestion_text="Have more years of work experice">1</Years1>
+                <Years2 text="Over 2 years" suggestion_text="Have more years of work experice">2</Years2>
+                <Years3 text="Over 3 years" suggestion_text="Have more years of work experice">3</Years3>
+                <Years4 text="Over 5 years">5</Years4>
+              </SkilledEmploymentExperience>
+              <MoneyAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount1 text="JPY 1 Miilion - 2 Million" suggestion_text="Increase Funds">8</Amount1>
+                <Amount2 text="JPY 2 Million - 3 Million" suggestion_text="Increase Funds">10</Amount2>
+                <Amount3 text="JPY 3 Million - 5 Million" suggestion_text="Increase Funds">12</Amount3>
+                <Amount4 text="Above JPY 5 Million">15</Amount4>
+              </MoneyAvailability>
+              <Relative UseForSuggestions="false" MaxPoints="10" Question="Do you have a relative livig in  Japan?">
+                <Yes text="Yes">5</Yes>
+                <No text="No">0</No>
+              </Relative>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>50</Green>
+              <Orange>40</Orange>
+            </Points>
+          </LanguageCollege>
+          <Diploma_Bachlor>
+            <Criterias>
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 20">15</AgeGroup1>
+                <AgeGroup2 text="Age 21 to 24">20</AgeGroup2>
+                <AgeGroup3 text="Age 25 to 30">15</AgeGroup3>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <Edu1 text="GCE A/L" suggestion_text="Complete a Diploma">10</Edu1>
+                <Edu2 text="Diploma" suggestion_text="Complete GCE A/L and Diploma">20</Edu2>
+                <Edu3 text="GCE A/L and Diploma">30</Edu3>
+              </EducationalQualification>
+              <JapaneseLanguageSkills UseForSuggestions="true" MaxPoints="15" Question="Do you have Japanese language qualification?">
+                <lang1 text="None" suggestion_text="Complete Japanese Language NAT-TEST">0</lang1>
+                <lang2 text="The Japanese Language NAT-TEST" suggestion_text="Complete Japanese Language Proficiency Test">12</lang2>
+                <lang3 text="The Japanese Language Proficiency Test">15</lang3>
+              </JapaneseLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="10" Question="How many years of experience do you have?">
+                <Years1 text="Less than 5 years" suggestion_text="Have more years of work experice">4</Years1>
+                <Years2 text="Over 5 years" suggestion_text="Have more years of work experice">6</Years2>
+                <Years3 text="Over 7 years" suggestion_text="Have more years of work experice">8</Years3>
+                <Years4 text="Over 10 years">10</Years4>
+              </SkilledEmploymentExperience>
+              <MoneyAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount1 text="JPY 1 Miilion - 2 Million" suggestion_text="Increase Funds">8</Amount1>
+                <Amount2 text="JPY 2 Million - 3 Million" suggestion_text="Increase Funds">10</Amount2>
+                <Amount3 text="JPY 3 Million - 5 Million" suggestion_text="Increase Funds">12</Amount3>
+                <Amount4 text="Above JPY 5 Million">15</Amount4>
+              </MoneyAvailability>
+              <Relative UseForSuggestions="false" MaxPoints="10" Question="Do you have a relative livig in  Japan?">
+                <Yes text="Yes">5</Yes>
+                <No text="No">0</No>
+              </Relative>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>50</Green>
+              <Orange>40</Orange>
+            </Points>
+          </Diploma_Bachlor>
+          <Masters_PHD>
+            <Criterias>
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup1 text="Age 24 to 30">20</AgeGroup1>
+                <AgeGroup2 text="Age 31 to 35">15</AgeGroup2>
+                <AgeGroup3 text="Age 36 to 40">12</AgeGroup3>
+                <AgeGroup4 text="Age 41 to 45">10</AgeGroup4>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="20" Question="What is your highest education qualification?">
+                <Edu1 text="GCE A/L" suggestion_text="Complete GCE A/L and Diploma">8</Edu1>
+                <Edu2 text="GCE A/L and Diploma" suggestion_text="Complete Bachelor digree or Masters base on work experience">12</Edu2>
+                <Edu3 text="Bachelor digree or Masters base on work experience" suggestion_text="Complete Bachelor and Postgraduate or Masters">15</Edu3>
+                <Edu4 text="Bachelor and Postgraduate or Masters">15</Edu4>
+              </EducationalQualification>
+              <JapaneseLanguageSkills UseForSuggestions="true" MaxPoints="15" Question="Do you have Japanese language qualification?">
+                <lang1 text="None" suggestion_text="Complete Japanese Language NAT-TEST">0</lang1>
+                <lang2 text="The Japanese Language NAT-TEST" suggestion_text="Complete Japanese Language Proficiency Test">12</lang2>
+                <lang3 text="The Japanese Language Proficiency Test">15</lang3>
+              </JapaneseLanguageSkills>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="15" Question="What is your English language ability?">
+                <englang1 text="none" suggestion_text="Improve your english skills">0</englang1>
+                <englang2 text="IELTS over 5" suggestion_text="Improve your english skills">12</englang2>
+                <englang3 text="TOEIC over 700">15</englang3>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="10" Question="How many years of experience do you have?">
+                <Years1 text="Less than 5 years" suggestion_text="Have more years of work experice">4</Years1>
+                <Years2 text="Over 5 years" suggestion_text="Have more years of work experice">6</Years2>
+                <Years3 text="Over 7 years" suggestion_text="Have more years of work experice">8</Years3>
+                <Years4 text="Over 10 years">10</Years4>
+              </SkilledEmploymentExperience>
+              <ProfessionalQualificaton UseForSuggestions="true" MaxPoints="10" Question="Do you have any profesional qualification?">
+                <No_Bacherlors text="No" suggestion_text="Complete s professional qualification">0</No_Bacherlors>
+                <Yes text="Yes">10</Yes>
+              </ProfessionalQualificaton>
+              <MoneyAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount1 text="JPY 1 Miilion - 2 Million" suggestion_text="Increase Funds">8</Amount1>
+                <Amount2 text="JPY 2 Million - 3 Million" suggestion_text="Increase Funds">10</Amount2>
+                <Amount3 text="JPY 3 Million - 5 Million" suggestion_text="Increase Funds">12</Amount3>
+                <Amount4 text="Above JPY 5 Million">15</Amount4>
+              </MoneyAvailability>
+              <Relative UseForSuggestions="false" MaxPoints="10" Question="Do you have a relative livig in  Japan?">
+                <Yes text="Yes">5</Yes>
+                <No text="No">0</No>
+              </Relative>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>50</Green>
+              <Orange>40</Orange>
+            </Points>
+          </Masters_PHD>
+        </Category>
+      </StudentVisa>
+    </VisaTypes>
+  </Japan>
+  <Canada>
+    <VisaTypes>
+      <StudentVisa>
+        <Category>
+          <Diploma_Bachlor>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">15</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">20</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">15</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">10</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <BachelorDegree text="GCE O/L">10</BachelorDegree>
+                <AustrlianDiploma text="GCE A/L">20</AustrlianDiploma>
+                <RecognisedQualification text="GCE A/L and Diploma">30</RecognisedQualification>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="CAD 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="CAD 15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="CAD 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above CAD 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Diploma_Bachlor>
+          <Masters_PHD>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">10</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">15</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">20</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">15</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="20" Question="What is your highest education qualification?">
+                <AL text="GCE A/L" suggestion_text="Complete a Diploma">8</AL>
+                <Diploma text="GCE A/L and Diploma" suggestion_text="Complete a Bachelor digree or Masters">12</Diploma>
+                <Bachelor text="Bachelor digree or Masters base on work experience" suggestion_text="Complete a Bachelor and Postgraduate or Masters">15</Bachelor>SC
+                <Masters text="Bachelor and Postgraduate or Masters" suggestion_text="Complete a Diploma">20</Masters>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <ProfessionalQualificaton UseForSuggestions="true" MaxPoints="10" Question="Do you have any profesional qualification?">
+                <No_Bacherlors text="No" suggestion_text="Complete s professional qualification">0</No_Bacherlors>
+                <Yes text="Yes">10</Yes>
+              </ProfessionalQualificaton>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="CAD 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="CAD 15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="CAD 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above CAD 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Masters_PHD>
+        </Category>
+      </StudentVisa>
+      <InvestorVisa>
+        <Category>
+          <None>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="15" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 25">8</AgeGroup1>
+                <AgeGroup2 text="Age 25 to 33">10</AgeGroup2>
+                <AgeGroup3 text="Age 33 to 40">15</AgeGroup3>
+                <AgeGroup4 text="Age 40 to 44">10</AgeGroup4>
+                <AgeGroup5 text="Above 45">8</AgeGroup5>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="15" Question="What is your highest education qualification?">
+                <Edu1 text="Masters /PHD">15</Edu1>
+                <Edu2 text="Bachelor Degree" suggestion_text="Complete a Masters /PHD">12</Edu2>
+                <Edu3 text="A/L OR Diploma" suggestion_text="Complete a Bachelor Degree">10</Edu3>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="10" Question="What is your English language ability?">
+                <englang1 text="Good" suggestion_text="Improve your english skills to Very Good">5</englang1>
+                <englang2 text="Very Good" suggestion_text="Improve your english skills to Excellent">7</englang2>
+                <englang3 text="Excellent">10</englang3>
+              </EnglishLanguageSkills>
+              <InvestmentAmount UseForSuggestions="true" MaxPoints="20" Question="Whats your investment capacity?">
+                <Amount1 text="CAD 3 -5 Miilion" suggestion_text="Improve investment">10</Amount1>
+                <Amount2 text="CAD 5-8 Miilion" suggestion_text="Improve investment">12</Amount2>
+                <Amount3 text="CAD 8-10 Miilion" suggestion_text="Improve investment">15</Amount3>
+                <Amount4 text="Above CAD 10 Million" suggestion_text="Improve investment">20</Amount4>
+              </InvestmentAmount>
+              <Export UseForSuggestions="true" MaxPoints="10" Question="Does your business export oriented?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Make your investment export oriented">0</No>
+              </Export>
+              <Job_Creation UseForSuggestions="true" MaxPoints="15" Question="How many full time jobs will it create?">
+                <Jobs1 text="less than 3">5</Jobs1>
+                <Jobs2 text="3 to 5">8</Jobs2>
+                <Jobs3 text="5-10">10</Jobs3>
+                <Jobs4 text="More than 10">15</Jobs4>
+              </Job_Creation>
+              <Export_Income UseForSuggestions="true" MaxPoints="10" Question="What is the expected annual income?">
+                <Amount1 text="CAD 100,000  OR Less" suggestion_text="Increase anual income">3</Amount1>
+                <Amount2 text="CAD 100,000 to 500,000" suggestion_text="Increase anual income">5</Amount2>
+                <Amount3 text="CAD 500,000 - 1,000,000" suggestion_text="Increase anual income">7</Amount3>
+                <Amount4 text="Over CAD 1,000,000">10</Amount4>
+              </Export_Income>
+              <Regional UseForSuggestions="true" MaxPoints="5" Question="Do you like to settle in regional?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Move to regional">0</No>
+              </Regional>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Health1 text="Good">0</Health1>
+                <Health2 text="Very Good">5</Health2>
+                <Health3 text="Excellent">10</Health3>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </None>
+        </Category>
+      </InvestorVisa>
+      <SkillMigration>
+        <Category>
+          <None>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="30" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 24">5</AgeGroup1>
+                <AgeGroup2 text="Age 25 to 32">10</AgeGroup2>
+                <AgeGroup3 text="Age 33 to 39">15</AgeGroup3>
+                <AgeGroup4 text="Age 40 to 44">10</AgeGroup4>
+                <AgeGroup5 text="Above 45">5</AgeGroup5>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="15" Question="What is your highest education qualification?">
+                <Edu1 text="A/L OR Diploma" suggestion_text="Complete a Bachelor degree">8</Edu1>
+                <Edu2 text="Graduate" suggestion_text="Complete a Bachelor degree">10</Edu2>
+                <Edu3 text="Post Graduate /Masters" suggestion_text="Complete a PHD">12</Edu3>
+                <Edu4 text="PHD">15</Edu4>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="10" Question="What is your English language ability?">
+                <englang1 text="Good" suggestion_text="Improve your english skills to Very Good">6</englang1>
+                <englang2 text="Very Good" suggestion_text="Improve your english skills to Excellent">8</englang2>
+                <englang3 text="Excellent">10</englang3>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years1 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years1>
+                <Years2 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years2>
+                <Years3 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years3>
+                <Years4 text="Over 10 Years">15</Years4>
+              </SkilledEmploymentExperience>
+              <ProfessionalQualificaton UseForSuggestions="true" MaxPoints="10" Question="Do you have any profesional qualification?">
+                <No_Bacherlors text="No" suggestion_text="Complete s professional qualification">0</No_Bacherlors>
+                <Yes text="Yes">10</Yes>
+              </ProfessionalQualificaton>
+              <SkillShortage UseForSuggestions="true" MaxPoints="10" Question="Does your profession comes under skill shortage list?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Find a job from skill shortage list">0</No>
+              </SkillShortage>
+   			  <JobOffer UseForSuggestions="true" MaxPoints="10" Question="Do you have a job offer?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Find a job s job offer from Canadian company">0</No>
+              </JobOffer>
+   			  <MarriageStatus UseForSuggestions="false" MaxPoints="10" Question="Whats your marriage status?">
+                <Yes text="Married">0</Yes>
+                <No text="Single">10</No>
+              </MarriageStatus>
+   			  <PartnerQualification UseForSuggestions="false" MaxPoints="5" Question="Whats your marriage status?">
+              	<Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Partner to get profesionaly qualified">0</No>
+              </PartnerQualification>
+       	      <PartnerExperience UseForSuggestions="true" MaxPoints="5" Question="How many yers of work experience does your patner has?">
+                <Years1 text="less than 5 Years" suggestion_text="Partner to have more years of work experice">2</Years1>
+                <Years2 text="5-10 Years" suggestion_text="Partner to have more years of work experice">3</Years2>
+                <Years3 text="Over 10 Years">5</Years3>
+              </PartnerExperience>
+              <Regional UseForSuggestions="true" MaxPoints="5" Question="Do you like to settle in regional?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Move to regional">0</No>
+              </Regional>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Health1 text="Good">0</Health1>
+                <Health2 text="Very Good">5</Health2>
+                <Health3 text="Excellent">10</Health3>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </None>
+        </Category>
+      </SkillMigration>
+    </VisaTypes>
+  </Canada>
+  <NewZealand>
+    <VisaTypes>
+      <StudentVisa>
+        <Category>
+          <Diploma_Bachlor>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">15</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">20</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">15</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">10</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="30" Question="What is your highest education qualification?">
+                <BachelorDegree text="GCE O/L">10</BachelorDegree>
+                <AustrlianDiploma text="GCE A/L">20</AustrlianDiploma>
+                <RecognisedQualification text="GCE A/L and Diploma">30</RecognisedQualification>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="NZD 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="NZD 15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="NZD 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above NZD 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Diploma_Bachlor>
+          <Masters_PHD>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="20" Question="What is your Age?">
+                <AgeGroup18_25 text="Age 18 to 24">10</AgeGroup18_25>
+                <AgeGroup25_33 text="Age 25 to 33">15</AgeGroup25_33>
+                <AgeGroup33_40 text="Age 33 to 40">20</AgeGroup33_40>
+                <AgeGroup40_45 text="Age 40 to 45">15</AgeGroup40_45>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="20" Question="What is your highest education qualification?">
+                <AL text="GCE A/L" suggestion_text="Complete a Diploma">8</AL>
+                <Diploma text="GCE A/L and Diploma" suggestion_text="Complete a Bachelor digree or Masters">12</Diploma>
+                <Bachelor text="Bachelor digree or Masters base on work experience" suggestion_text="Complete a Bachelor and Postgraduate or Masters">15</Bachelor>SC
+                <Masters text="Bachelor and Postgraduate or Masters" suggestion_text="Complete a Diploma">20</Masters>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="20" Question="What is your English language ability?">
+                <Good text="Good" suggestion_text="Improve your english skills to Very Good">10</Good>
+                <VeryGood text="Very Good" suggestion_text="Improve your english skills to Excellent">15</VeryGood>
+                <Excellent text="Excellent" suggestion_text="">20</Excellent>
+              </EnglishLanguageSkills>
+              <SkilledEmploymentExperience UseForSuggestions="true" MaxPoints="15" Question="How many years of experience do you have?">
+                <Years0_5 text="less than 5 Years" suggestion_text="Have more years of work experice">8</Years0_5>
+                <Years5_7 text="5-7 Years" suggestion_text="Have more years of work experice">10</Years5_7>
+                <Years7_10 text="7-10 Years" suggestion_text="Have more years of work experice">12</Years7_10>
+                <Years10 text="Over 10 Years">15</Years10>
+              </SkilledEmploymentExperience>
+              <ProfessionalQualificaton UseForSuggestions="true" MaxPoints="10" Question="Do you have any profesional qualification?">
+                <No_Bacherlors text="No" suggestion_text="Complete s professional qualification">0</No_Bacherlors>
+                <Yes text="Yes">10</Yes>
+              </ProfessionalQualificaton>
+              <FundsAvailability UseForSuggestions="true" MaxPoints="15" Question="What is your confort level of spending?">
+                <Amount10_15 text="NZD 10,000-15000" suggestion_text="Increase Funds">8</Amount10_15>
+                <Amount15_20 text="NZD 15,000-20,000" suggestion_text="Increase Funds">10</Amount15_20>
+                <Amount20_30 text="NZD 20,000-30,000" suggestion_text="Increase Funds">12</Amount20_30>
+                <Amount30 text="Above NZD 30,000">15</Amount30>
+              </FundsAvailability>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Good text="Good">0</Good>
+                <VeryGood text="Very Good">5</VeryGood>
+                <Excellent text="Excellent">10</Excellent>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </Masters_PHD>
+        </Category>
+      </StudentVisa>
+      <InvestorVisa>
+        <Category>
+          <None>
+            <Criterias>
+              <!-- Fiexed-->
+              <Age UseForSuggestions="false" MaxPoints="15" Question="What is your Age?">
+                <AgeGroup1 text="Age 18 to 25">8</AgeGroup1>
+                <AgeGroup2 text="Age 25 to 33">10</AgeGroup2>
+                <AgeGroup3 text="Age 33 to 40">15</AgeGroup3>
+                <AgeGroup4 text="Age 40 to 44">10</AgeGroup4>
+                <AgeGroup5 text="Above 45">8</AgeGroup5>
+              </Age>
+              <EducationalQualification UseForSuggestions="true" MaxPoints="15" Question="What is your highest education qualification?">
+                <Edu1 text="Masters /PHD">15</Edu1>
+                <Edu2 text="Bachelor Degree" suggestion_text="Complete a Masters /PHD">12</Edu2>
+                <Edu3 text="A/L OR Diploma" suggestion_text="Complete a Bachelor Degree">10</Edu3>
+              </EducationalQualification>
+              <EnglishLanguageSkills UseForSuggestions="true" MaxPoints="10" Question="What is your English language ability?">
+                <englang1 text="Good" suggestion_text="Improve your english skills to Very Good">5</englang1>
+                <englang2 text="Very Good" suggestion_text="Improve your english skills to Excellent">7</englang2>
+                <englang3 text="Excellent">10</englang3>
+              </EnglishLanguageSkills>
+              <InvestmentAmount UseForSuggestions="true" MaxPoints="20" Question="Whats your investment capacity?">
+                <Amount1 text="NZD 3 -5 Miilion" suggestion_text="Improve investment">10</Amount1>
+                <Amount2 text="NZD 5-8 Miilion" suggestion_text="Improve investment">12</Amount2>
+                <Amount3 text="NZD 8-10 Miilion" suggestion_text="Improve investment">15</Amount3>
+                <Amount4 text="Above 10 million">20</Amount4>
+              </InvestmentAmount>
+              <Export UseForSuggestions="true" MaxPoints="10" Question="Does your business export oriented?">
+                <Yes text="Yes">10</Yes>
+                <No text="No" suggestion_text="Make your investment export oriented">0</No>
+              </Export>
+              <Job_Creation UseForSuggestions="true" MaxPoints="15" Question="How many full time jobs will it create?">
+                <Jobs1 text="less than 3">5</Jobs1>
+                <Jobs2 text="3 to 5">8</Jobs2>
+                <Jobs3 text="5-10">10</Jobs3>
+                <Jobs4 text="More than 10">15</Jobs4>
+              </Job_Creation>
+              <Export_Income UseForSuggestions="true" MaxPoints="10" Question="What is the expected annual income?">
+                <Amount1 text="NZD 100,000  OR Less" suggestion_text="Increase anual income">3</Amount1>
+                <Amount2 text="NZD 100,000 to 500,000" suggestion_text="Increase anual income">5</Amount2>
+                <Amount3 text="NZD  500,000 - 1,000,000" suggestion_text="Increase anual income">7</Amount3>
+                <Amount4 text="Over NZD 1,000,000">10</Amount4>
+              </Export_Income>
+              <Regional UseForSuggestions="true" MaxPoints="5" Question="Do you like to settle in regional?">
+                <Yes text="Yes">5</Yes>
+                <No text="No" suggestion_text="Move to regional">0</No>
+              </Regional>
+          	  <Health_Character UseForSuggestions="false" MaxPoints="10" Question="How do you rank your health and charactor?">
+                <Health1 text="Good">0</Health1>
+                <Health2 text="Very Good">5</Health2>
+                <Health3 text="Excellent">10</Health3>
+              </Health_Character>
+            </Criterias>
+            <Points>
+              <Green>80</Green>
+              <Orange>60</Orange>
+            </Points>
+          </None>
+        </Category>
+      </InvestorVisa>
+    </VisaTypes>
+  </NewZealand>
+</Countries>

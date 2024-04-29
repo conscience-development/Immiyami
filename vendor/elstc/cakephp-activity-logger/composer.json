@@ -1,0 +1,33 @@
+{
+    "name": "elstc/cakephp-activity-logger",
+    "description": "ActivityLogger plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "license": ["MIT"],
+    "require": {
+        "php": ">=7.2",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "cakephp/cakephp": "^4.0",
+        "psr/log": "^1.0"
+    },
+    "require-dev": {
+        "cakephp/authentication": "^2.0",
+        "cakephp/cakephp-codesniffer": "^4.2",
+        "cakephp/migrations": "^3.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elastic\\ActivityLogger\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elastic\\ActivityLogger\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

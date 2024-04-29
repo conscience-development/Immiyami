@@ -1,0 +1,21 @@
+CREATE TABLE `user_logs` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `action` varchar(255) DEFAULT NULL,
+  `useragent` varchar(256) DEFAULT NULL,
+  `os` varchar(255) DEFAULT NULL,
+  `ip` varchar(50) DEFAULT NULL,
+  `host` varchar(255) DEFAULT NULL,
+  `referrer` varchar(255) NOT NULL,
+  `status` int(1) DEFAULT 1,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+ALTER TABLE `user_logs`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `user_logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `user_logs` CHANGE `referrer` `referrer` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;

@@ -1,0 +1,35 @@
+CREATE TABLE `immiyami`.`xml_sheets` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NULL DEFAULT NULL , `version` VARCHAR(255) NULL DEFAULT NULL , `file` VARCHAR(255) NULL DEFAULT NULL , `file_dir` VARCHAR(255) NULL DEFAULT NULL , `status` ENUM('0','1') NOT NULL DEFAULT '0' , `user_id` BIGINT(20) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_sheets` ADD CONSTRAINT `fk_user_xml_sheets` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `immiyami`.`xml_countries` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NULL DEFAULT NULL , `xml_sheet_id` BIGINT(20) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_countries` ADD CONSTRAINT `fk_xml_sheet_contries` FOREIGN KEY (`xml_sheet_id`) REFERENCES `xml_sheets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `immiyami`.`xml_visatypes` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NULL DEFAULT NULL , `xml_country_id` BIGINT(20) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_visatypes` ADD CONSTRAINT `fk_xml_contries_id` FOREIGN KEY (`xml_country_id`) REFERENCES `xml_countries`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `immiyami`.`xml_qualifications` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NULL DEFAULT NULL , `xml_visatype_id` BIGINT(20) NULL DEFAULT NULL , `xml_qualif_point_id` BIGINT(20) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `immiyami`.`xml_qualif_points` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `color` VARCHAR(255) NULL DEFAULT NULL , `points` VARCHAR(255) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_qualifications` ADD CONSTRAINT `fk_xml_visatype_id` FOREIGN KEY (`xml_visatype_id`) REFERENCES `xml_visatypes`(`id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `xml_qualifications` ADD CONSTRAINT `fk_qualif_points_id` FOREIGN KEY (`xml_qualif_point_id`) REFERENCES `xml_qualif_points`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `immiyami`.`xml_criterias` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NULL DEFAULT NULL , `tag` VARCHAR(255) NULL DEFAULT NULL , `useForSuggestions` ENUM('0','1') NOT NULL DEFAULT '0' , `maxpoint` VARCHAR(255) NULL DEFAULT NULL , `question` TEXT NOT NULL , `xml_qualification_id` BIGINT(20) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_criterias` ADD CONSTRAINT `fk_xml_quelification` FOREIGN KEY (`xml_qualification_id`) REFERENCES `xml_qualifications`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `immiyami`.`xml_criteria_answers` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NULL DEFAULT NULL , `tagname` VARCHAR(255) NULL DEFAULT NULL , `answer` TEXT NULL DEFAULT NULL , `point` VARCHAR(255) NULL DEFAULT NULL , `criteria_id` BIGINT(20) NULL DEFAULT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_criterias` CHANGE `tag` `tagname` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE `xml_criteria_answers` ADD CONSTRAINT `fk_criteria_id` FOREIGN KEY (`criteria_id`) REFERENCES `xml_criterias`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `immiyami`.`xml_submissions` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `xml_sheet_id` BIGINT(20) NOT NULL , `xml_country_id` BIGINT(20) NOT NULL , `xml_vsatype_id` BIGINT(20) NOT NULL , `xml_qualification_id` BIGINT(20) NOT NULL , `user_id` BIGINT(20) NOT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_submissions` ADD CONSTRAINT `fk_user_id_xml_submition` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `xml_submissions` ADD CONSTRAINT `fk_xml_sheets_sub` FOREIGN KEY (`xml_sheet_id`) REFERENCES `xml_sheets`(`id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `xml_submissions` ADD CONSTRAINT `fk_xml_county_sub` FOREIGN KEY (`xml_country_id`) REFERENCES `xml_countries`(`id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `xml_submissions` ADD CONSTRAINT `fk_xmk_visatype_sub` FOREIGN KEY (`xml_vsatype_id`) REFERENCES `xml_visatypes`(`id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `xml_submissions` ADD CONSTRAINT `fk_xml_qualification_id_sub` FOREIGN KEY (`xml_qualification_id`) REFERENCES `xml_qualifications`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE `immiyami`.`xml_submission_answers` ( `id` BIGINT(20) NOT NULL AUTO_INCREMENT , `criteria_id` BIGINT(20) NOT NULL , `criteria_answer_id` BIGINT(20) NOT NULL , `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `xml_submission_answers` ADD CONSTRAINT `fk_criteria_id_sub_ans` FOREIGN KEY (`criteria_id`) REFERENCES `xml_criterias`(`id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `xml_submission_answers` ADD CONSTRAINT `fk_criteria_ans_id_sub_ans` FOREIGN KEY (`criteria_answer_id`) REFERENCES `xml_criteria_answers`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
