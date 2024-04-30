@@ -2,8 +2,8 @@
 <div class="col-lg-12 col-sm-12 col-xs-12 d-block d-sm-none">
 <a href="/list-posts" class="add-red-bar"><div class="add-red-bardiv">Classified Ads</div></a>
 </div>
-<style>
-	/* .product-card {
+<!-- <style>
+	.product-card {
     width: 100%; /* Make the card responsive to its container */
 }
 
@@ -22,9 +22,9 @@
     width: 100%;
     height: auto; /* Make the image responsive */
     object-fit: cover; /* Maintain aspect ratio and cover the container */
-} */
+}
 
-</style>
+</style> -->
 <!--
             <div class="container-fluid">
 -->
@@ -38,9 +38,9 @@
 						<div class="product-media" style="width:  1500px;
 																	height: 158.825px;
 																	overflow:hidden;">
-							<div class="product-img" style="width:  1500px;
-																	height: 158.825px;
-																	overflow:hidden;">
+							<div class="product-img" style="width:  100%;
+															height: 100%;
+															object-fit: cover;">
 								<img src="/files/banners/photo/<?=$hbanner->photo_dir;?>/ad_Top_<?=$hbanner->photo?>" alt="<?=$hbanner->title?>" style="
 																							width:  100%;
 																							height: 100%;
