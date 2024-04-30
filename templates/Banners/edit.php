@@ -38,8 +38,8 @@
                                                     <?php endif; ?>
                                                     <?php
 													//echo $this->Form->control('photo_dir',['class'=>'form-control']);
-													echo $this->Form->control('start_date', ['empty' => true,'class'=>'form-control datepicker-default','id'=>'startDate','min'=>date('Y-m-d'),'label'=>'Start Date *']);
-                                                    echo $this->Form->control('end_date', ['empty' => true,'class'=>'form-control datepicker-default','id'=> 'endDate','min'=>date('Y-m-d'),'label'=>'End Date *']);
+													echo $this->Form->control('start_date', ['empty' => true,'class'=>'form-control datepicker-default','id'=>'startDate','label'=>'Start Date *']);
+                                                    echo $this->Form->control('end_date', ['empty' => true,'class'=>'form-control datepicker-default','id'=> 'endDate','label'=>'End Date *']);
 													echo $this->Form->control('url',['required'=>true,'type' => 'url','class'=>'form-control','label'=>'URL *']);
 													echo $this->Form->control('position',['required'=>true,'options' =>['top'=>'Top','left_top'=>'Left Top','left_bottom'=>'Left Bottom','right_top'=>'Right Top','right_bottom'=>'Right Bottom','id'=>'position'] ,'class'=>'form-control','label'=>'Position *']);
                                                     echo $this->Form->control('banner_type_id', ['required'=>true,'options' => $bannerTypes, 'empty' => true,'class'=>'multi-select wide form-control','label'=>'Banner Type *']);
@@ -132,10 +132,5 @@
         }
     }
 
-    submitBtn.addEventListener('click', function(event) {
-        if (titleInput.value == '' || startDateInput.value == '' || endDateInput.value == '' || positionInput.value == '') {
-            alert('Please fill the required fields');
-            event.preventDefault();
-        }
-    });
+    
 </script>

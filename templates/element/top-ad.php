@@ -3,7 +3,7 @@
 <a href="/list-posts" class="add-red-bar"><div class="add-red-bardiv">Classified Ads</div></a>
 </div>
 <style>
-	.product-card {
+	/* .product-card {
     width: 100%; /* Make the card responsive to its container */
 }
 
@@ -22,7 +22,7 @@
     width: 100%;
     height: auto; /* Make the image responsive */
     object-fit: cover; /* Maintain aspect ratio and cover the container */
-}
+} */
 
 </style>
 <!--

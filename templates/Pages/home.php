@@ -27,7 +27,7 @@
 
                                     <?php    }else{ ?>
                                             <img src="/front/images/news.jpg">
-
+                                                
                                     <?php    } ?>
                                     <!-- <img src="/files/articles/photo/<?=$harticle->photo_dir;?>/<?=$harticle->photo;?>" alt="<?=$harticle->title;?>"> -->
                                     <div class="blog-overlay">
