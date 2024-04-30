@@ -799,9 +799,17 @@
                                         <div class="col-lg-12">
                                             <? echo $this->Form->control('url',['type'=>'url','required'=>false,'label'=>'URL','class'=>'form-control']);?>
                                         </div>
+                                        <?
+                                            if($Auth->role == 'superuser'):
+
+                                        ?>
+                                            <div class="col-lg-12">
+                                                <? echo $this->Form->control('status',['required'=>true,'options' =>['0'=>'Inactive','1'=>'Active'] ,'class'=>'form-control']);?>
+                                            </div>
+                                        <?endif?>
                                     </div>
                                 </div>
-
+ 
 
                                 <div class="adpost-card pb-2">
                                     <div class="adpost-agree">
