@@ -34,7 +34,6 @@ use Cake\ORM\TableRegistry;
                             </tr>
                         </thead>
                     </thead>
-                    <?debug($posts)?>
                     <tbody>
                         <?php foreach ($posts as $post): ?>
                         <tr>
