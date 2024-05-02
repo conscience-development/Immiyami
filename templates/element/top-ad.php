@@ -26,7 +26,7 @@
 
 </style> -->
 
-            <div class="container-fluid">
+            <!-- <div class="container-fluid"> -->
 
                 <div class="top-add-slider slider-arrow mt-5">
 					<?
@@ -34,7 +34,7 @@
 						if($hbanner->position == 'top'){
 					?>
 					<a href="<?=$hbanner->url?>" target="_blank">
-					<div class="product-card" style="width:  auto" >
+					<div class="product-card" style="width:auto" >
 						<div class="product-media" style="width:  auto;
 																	height: 158.825px;
 																	overflow:hidden;">
@@ -42,7 +42,7 @@
 															height: 100%;">
 								<img src="/files/banners/photo/<?=$hbanner->photo_dir;?>/ad_Top_<?=$hbanner->photo?>" alt="<?=$hbanner->title?>" style="
 																							width:  100%;
-																							height: 100%;
+																							height: 158.825px;
 																							object-fit: fill;
 
 								">
