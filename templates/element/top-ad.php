@@ -43,7 +43,7 @@
 								<img src="/files/banners/photo/<?=$hbanner->photo_dir;?>/ad_Top_<?=$hbanner->photo?>" alt="<?=$hbanner->title?>" style="
 																							width:  100%;
 																							height: 158.825px;
-																							object-fit: fill;
+																							
 
 								">
 							</div>
