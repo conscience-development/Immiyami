@@ -25,9 +25,9 @@
 }
 
 </style> -->
-<!--
+
             <div class="container-fluid">
--->
+
                 <div class="top-add-slider slider-arrow mt-5">
 					<?
 					foreach($home_banners as $hbanner){
@@ -35,16 +35,17 @@
 					?>
 					<a href="<?=$hbanner->url?>" target="_blank">
 					<div class="product-card" >
-						<div class="product-media" style="width:  1500px;
+						<div class="product-media" style="width:  auto;
 																	height: 158.825px;
 																	overflow:hidden;">
 							<div class="product-img" style="width:  100%;
 															height: 100%;
-															object-fit: cover;">
+															object-fit: fill;">
 								<img src="/files/banners/photo/<?=$hbanner->photo_dir;?>/ad_Top_<?=$hbanner->photo?>" alt="<?=$hbanner->title?>" style="
 																							width:  100%;
 																							height: 100%;
-																							object-fit: cover;
+																							object-fit: fill;
+
 								">
 							</div>
 						</div>

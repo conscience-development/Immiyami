@@ -33,7 +33,7 @@ use Cake\ORM\TableRegistry;
                         <?php foreach ($activityLogs as $activityLog): ?>
                         <tr>
                             <!-- <td><?= $this->Number->format($activityLog->id) ?></td> -->
-                            <td><?= h($activityLog->created_at) ?></td>
+                            <td><?= date('Y/m/d H:m', strtotime($activityLog->created_at)) ?></td>
                             <td><?= h($activityLog->scope_model) ?></td>
                             <td><?= h($activityLog->scope_id) ?></td>
                             <td><?= h($activityLog->issuer_model) ?></td>

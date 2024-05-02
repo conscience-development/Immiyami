@@ -20,7 +20,7 @@
 								<?= __('Created') ?>:
 							</strong>
 							<span>
-								<?= date('Y/m/d H:s', strtotime($video->created)) ?>
+								<?= date('Y/m/d H:m', strtotime($video->created)) ?>
 							</span>
 						</div>
 						<?php if ($video->status == 1): ?>
