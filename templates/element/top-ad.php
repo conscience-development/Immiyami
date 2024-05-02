@@ -34,13 +34,12 @@
 						if($hbanner->position == 'top'){
 					?>
 					<a href="<?=$hbanner->url?>" target="_blank">
-					<div class="product-card" >
+					<div class="product-card" style="width:  auto" >
 						<div class="product-media" style="width:  auto;
 																	height: 158.825px;
 																	overflow:hidden;">
 							<div class="product-img" style="width:  100%;
-															height: 100%;
-															object-fit: fill;">
+															height: 100%;">
 								<img src="/files/banners/photo/<?=$hbanner->photo_dir;?>/ad_Top_<?=$hbanner->photo?>" alt="<?=$hbanner->title?>" style="
 																							width:  100%;
 																							height: 100%;
