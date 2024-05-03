@@ -1326,16 +1326,24 @@ class UsersController extends AppController
         			$acces->controller_func_id = $acc;
         			if ($this->Access->save($acces)) {}
         		}
+            }else{
+                
             }
             
-    		
-            $user = $this->Users->patchEntity($user, $this->request->getData());
+    		if(empty($this->request->getData('accessSet'))){
+                $this->Flash->error(__('Access for users is required. Please select at least one access option.'));
+            }
+            else{
+                $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
+                
                 $this->Flash->success(__('The user has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            }
+            
         }
         $this->loadModel('ControllerFunc');
         $controllerFuncsArr = $this->ControllerFunc->find('all', ['contain' => []])->toArray();
