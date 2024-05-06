@@ -72,7 +72,8 @@
                                                 <div class="suggest-title">
                                                     <h4>
 														<a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $article->title);?>-<?=$article->id;?>">
-														<?=substr_replace($article->title, "...", 30)?>
+														<?=substr_replace($article->title, "...", 45)?> <!-- Apeksha change this line and shot titel for 45 -->
+														
 														</a>
 													</h4>
                                                 </div>
@@ -145,7 +146,7 @@
                                         </ul>
                                         <div class="blog-text">
                                             <h4><a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $article->title);?>-<?=$article->id;?>">
-                                            <?=substr_replace($article->title, "...", 30)?>
+                                            <?=($article->title)?> <!-- Apeksha Remove the Titel Shoten -->
 											</a></h4>
                                             <p><?=substr_replace($article->short_description, "...", 70)?></p>
                                         </div>

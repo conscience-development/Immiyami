@@ -46,7 +46,7 @@
                                         </li>
                                     </ul>
                                     <div class="blog-text">
-                                        <h4><a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $harticle->title);?>-<?=$harticle->id;?>"><?=substr_replace($harticle->title, "...", 30)?></a></h4>
+                                        <h4><a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $harticle->title);?>-<?=$harticle->id;?>"><?=substr_replace($harticle->title, "...", 45)?></a></h4> <!-- Apeksha change the Titel Shoten 30 to 45 -->
                                    </div>
                                     <a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $harticle->title);?>-<?=$harticle->id;?>" class="blog-read">
                                         <span>read more</span>
