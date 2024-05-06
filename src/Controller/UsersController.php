@@ -1719,10 +1719,6 @@ class UsersController extends AppController
 
 
 			$hash = "https://".$_SERVER['SERVER_NAME']."/users/passwordReset?key=".$encryption;
-            $randomNumber = rand(10000, 99999);
-
-            // Concatenate the random number to the URL
-            $hash .= $randomNumber;
 
             // echo($hash);
 			$mailer = new Mailer();
