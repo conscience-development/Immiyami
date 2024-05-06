@@ -1326,24 +1326,16 @@ class UsersController extends AppController
         			$acces->controller_func_id = $acc;
         			if ($this->Access->save($acces)) {}
         		}
-            }else{
-                
             }
             
-    		if(empty($this->request->getData('accessSet'))){
-                $this->Flash->error(__('Access for users is required. Please select at least one access option.'));
-            }
-            else{
-                $user = $this->Users->patchEntity($user, $this->request->getData());
+    		
+            $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                
                 $this->Flash->success(__('The user has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
-            }
-            
         }
         $this->loadModel('ControllerFunc');
         $controllerFuncsArr = $this->ControllerFunc->find('all', ['contain' => []])->toArray();
@@ -1612,11 +1604,9 @@ class UsersController extends AppController
         if($user_id2[1] == date('Ymd')){
             
         }else{
-            $this->Flash->error(__('Password reset link not valid. Please, try again.'));
-            return $this->redirect(['action' => 'login']);
-        }
-		
-		if ($this->request->is('post')) {
+            // $this->Flash->error(__('Password reset link not valid. Please, try again.'));
+            // return $this->redirect(['action' => 'login']);
+            if ($this->request->is('post')) {
 			if($this->request->getQuery('key')){
                 if($this->request->getData('password') == $this->request->getData('c_password')){
 
@@ -1659,6 +1649,7 @@ class UsersController extends AppController
 			}
 			$this->Flash->error('Your username or password is incorrect.');
 		}
+        }
 		
 		$this->viewBuilder()->setLayout('login');
 
@@ -1719,6 +1710,10 @@ class UsersController extends AppController
 
 
 			$hash = "https://".$_SERVER['SERVER_NAME']."/users/passwordReset?key=".$encryption;
+            $randomNumber = rand(10000, 99999);
+
+            // Concatenate the random number to the URL
+            $hash .= $randomNumber;
 
             // echo($hash);
 			$mailer = new Mailer();
