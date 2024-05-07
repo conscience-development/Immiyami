@@ -86,11 +86,17 @@
                     <td><?= $user->has('coupon') ? $this->Html->link($user->coupon->name, ['controller' => 'Coupons', 'action' => 'view', $user->coupon->id]) : '' ?></td>
                     
 -->
-                            <td><?=  date('H:i:s',strtotime($user->created)) ?></td>
+                            <td><?=  date('Y/m/d H:i',strtotime($user->created)) ?></td>
                             <!-- <td><?($user->Created)?></td> -->
 
                             <td class="actions">
                                 <div class="d-flex">
+                                <? if($user->status == '0'){ ?>
+                                    <?= $this->Form->postLink('<i class="fa fa-check">'.__('').'</i>', 
+							['action' => 'changestatusUser', $user->id],
+							['escape' => false, 'confirm' => __('Are you sure you want to update # {0}?', $user->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
+
+                                    <?}?>
                                     <?= $this->Html->link(
 							'<i class="fas fa-eye">' . __('') . '</i>',
 							['action' => 'view', $user->id],

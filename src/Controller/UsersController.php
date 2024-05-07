@@ -215,6 +215,20 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'member']);
     }
+    public function changestatusUser($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $user = $this->Users->get($id);
+        $user->status = '1';
+		if ($this->Users->save($user)) {
+			$this->Flash->success(__('The member has been updated.'));
+		} else {
+			$this->Flash->error(__('The member could not be updated. Please, try again.'));
+		}
+
+        return $this->redirect(['action' => 'index']);
+    }
+
     // Change ststus one by one
     public function changestatussupplier($id = null)
     {
