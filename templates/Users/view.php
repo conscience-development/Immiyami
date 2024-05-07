@@ -55,7 +55,7 @@
                         </tr>
                         <tr>
                             <th><?= __('Created') ?></th>
-                            <td><?= date('Y/m/d H:m',strtotime($user->created)) ?></td>
+                            <td><?= date(' Y/m/d H:i',strtotime($user->created)) ?></td>
                         </tr>
                         <tr>
                             <th><?= __('Status') ?></th>

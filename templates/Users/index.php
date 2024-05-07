@@ -86,7 +86,8 @@
                     <td><?= $user->has('coupon') ? $this->Html->link($user->coupon->name, ['controller' => 'Coupons', 'action' => 'view', $user->coupon->id]) : '' ?></td>
                     
 -->
-                            <td><?=  date('Y/m/d H:m',strtotime($user->created)) ?></td>
+                            <td><?=  date('H:i:s',strtotime($user->created)) ?></td>
+                            <!-- <td><?($user->Created)?></td> -->
 
                             <td class="actions">
                                 <div class="d-flex">

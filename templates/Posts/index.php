@@ -80,10 +80,10 @@ use Cake\ORM\TableRegistry;
                             
                             <? 
                                 if($post->status =='1' && ($post->user->role =='superuser' || $post->user->role =='admin') ){ ?>
-                                    <td><?= date('Y/m/d',strtotime(($post->approved_date))) ?></td> <?
+                                    <td><?= date('Y/m/d H:i',strtotime(($post->approved_date))) ?></td> <?
                                 }
                                 if($post->status == '1' && !(($post->user->role =='superuser' || $post->user->role =='admin'))){ ?>
-                                    <td><?= date('Y/m/d',strtotime(($post->approved_date))) ?></td>
+                                    <td><?= date('Y/m/d H:i',strtotime(($post->approved_date))) ?></td>
                                 <?}
                             ?>
                             <td><?= date('Y/m/d H:i',strtotime(($post->created))) ?></td>
