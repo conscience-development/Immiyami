@@ -6,7 +6,7 @@
 ## Description
 Welcome to ImmiYami, a platform that connects immigration seekers with trusted service providers. Our platform was founded by immigrants living in various countries including New Zealand, Australia, Japan, United Arab Emirates, and Canada, who understand the challenges and obstacles that come with the immigration process. ✈️🌎
 
-## Develped By
+## Developed By
 Conscience Integrated (Pvt) Ltd 🏢
 
 ## Client
@@ -18,7 +18,7 @@ Immiyami 🤝
 - Janith 🧑‍💻
 - Lakshan 🧑‍💻
 
-## server management
+## Server management
 - Lakshan 🧑‍💻
 
 ## Project Managers
