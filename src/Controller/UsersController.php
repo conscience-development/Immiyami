@@ -1340,10 +1340,10 @@ class UsersController extends AppController
                         $mailer->setEmailFormat('html')
                             ->setTo($user->email)
                             ->setSubject('ImmiYami : Added as an Admin')
-                            ->setTextMessage('Hello ' . $user->first_name . ' ' . $user->last_name . ', you have been added as an admin.');
+                            ->setViewVars(['name' => $user->first_name . ' ' . $user->last_name, 'email' => $user->email])
+                            ->viewBuilder()
+                            ->setTemplate('adminverify');
                         $mailer->deliver();
-
-                
 
                 return $this->redirect(['action' => 'supplier']);
             }
