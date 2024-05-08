@@ -1336,6 +1336,15 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The supplier has been saved.'));
 
+                $mailer = new Mailer();
+                        $mailer->setEmailFormat('html')
+                            ->setTo($user->email)
+                            ->setSubject('ImmiYami : Added as an Admin')
+                            ->setViewVars(['name' => $user->first_name . ' ' . $user->last_name, 'email' => $user->email])
+                            ->viewBuilder()
+                            ->setTemplate('memberverify');
+                        $mailer->deliver();
+
                 return $this->redirect(['action' => 'supplier']);
             }
             $this->Flash->error(__('The supplier could not be saved. Please, try again.'));
