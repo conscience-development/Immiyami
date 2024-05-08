@@ -1339,7 +1339,7 @@ class UsersController extends AppController
                 $mailer = new Mailer();
                         $mailer->setEmailFormat('html')
                             ->setTo($user->email)
-                            ->setSubject('ImmiYami : Added as an Admin')
+                            ->setSubject('ImmiYami : Added as an Supplier ')
                             ->setViewVars(['name' => $user->first_name . ' ' . $user->last_name, 'email' => $user->email])
                             ->viewBuilder()
                             ->setTemplate('adminverify');
