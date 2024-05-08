@@ -1285,7 +1285,7 @@ class UsersController extends AppController
     public function addSponsor()
     {
         $user = $this->Users->newEmptyEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is('post')) { 
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The sponsor has been saved.'));
