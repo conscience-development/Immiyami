@@ -861,7 +861,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group">
-                            <? echo $this->Form->control('category_id', ['label'=>false,'options' => $categories, 'empty' => true,'class'=>'multi-select wide form-control','empty' => 'Category *']); ?>
+                            <? echo $this->Form->control('category_id', ['label'=>false,'options' => $categories, 'empty' => true,'class'=>'multi-select wide form-control','empty' => 'Category *','required'=>true]); ?>
                             <small class="form-alert">Pick your category</small>
                         </div>
                     </div>
