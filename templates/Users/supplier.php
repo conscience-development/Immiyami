@@ -89,7 +89,8 @@
                     <td><?= $user->has('coupon') ? $this->Html->link($user->coupon->name, ['controller' => 'Coupons', 'action' => 'view', $user->coupon->id]) : '' ?></td>
                     <td><?= h($user->created) ?></td>
 -->
-                            <td><?= date('Y/m/d H:s',strtotime($user->created))?></td>
+                            <td><?= date('Y/m/d H:i',strtotime($user->created))?></td>
+                            <!-- <td><?= h($user->created) ?></td> -->
                             <td class="actions">
                                 <div class="d-flex">
                                     <? if($user->status == '0'){ ?>
@@ -110,7 +111,7 @@
 						) ?>
                                     <?= $this->Form->postLink('<i class="fa fa-trash">'.__('').'</i>', 
 							['action' => 'delete', $user->id],
-							['escape' => false, 'confirm' => __('Are you sure you want to delete this user ?', $user->id),'class' => 'btn btn-danger shadow btn-xs sharp']) ?>
+							['escape' => false, 'confirm' => __('Are you sure you want to delete this user ', $user->first_name),'class' => 'btn btn-danger shadow btn-xs sharp']) ?>
                                 </div>
                             </td>
                         </tr>

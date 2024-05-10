@@ -75,7 +75,7 @@
                                                 <div class="suggest-title">
                                                     <h4>
 														<a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $articles->title);?>-<?=$articles->id;?>">
-														<?=substr_replace($articles->title, "...", 30)?>
+														<?=($articles->title)?> <!-- Apeksha Remove the Titel Shoten -->
 														</a>
 													</h4>
                                                 </div>
@@ -118,7 +118,7 @@
                     <div class="col-lg-8 m-auto" >
                         
                         <div class="blog-details-title">
-                            <h2 class="single-content"><?=substr_replace($article->title, "...", 30)?></h2>
+                            <h2 class="single-content"><?=($article->title)?></h2> <!-- Apeksha Remove the Titel Shoten -->
                         </div>
                         <ul class="blog-details-meta">
                             <li>
@@ -149,7 +149,7 @@
                                             <?php    } ?></div>
                         <div class="blog-details-content">
                             <div class="description">
-                                <?=substr_replace($article->description,"...",70)?>
+                                <?=($article->description)?> <!-- Apeksha Remove the Titel Shoten -->
                             </div>
                         </div>
 

@@ -79,13 +79,14 @@ use Cake\ORM\TableRegistry;
                             ?>
                             
                             <? 
+                                
                                 if($post->status =='1' && ($post->user->role =='superuser' || $post->user->role =='admin') ){ ?>
-                                    <td><?= date('Y/m/d',strtotime(($post->approved_date))) ?></td> <?
+                                    <td><?= date('Y/m/d H:i',strtotime(($post->approved_date))) ?></td> <?
                                 }
                                 if($post->status == '1' && !(($post->user->role =='superuser' || $post->user->role =='admin'))){ ?>
-                                    <td><?= date('Y/m/d',strtotime(($post->approved_date))) ?></td>
-                                <?}
-                            ?>
+                                    <td><?= date('Y/m/d H:i',strtotime(($post->approved_date))) ?></td>
+                                <?}?>
+                            
                             <td><?= date('Y/m/d H:i',strtotime(($post->created))) ?></td>
                             <td class="actions">
                                 <div class="d-flex">
@@ -96,7 +97,7 @@ use Cake\ORM\TableRegistry;
                                     <? if($post->status == '0' || $post->c_status == '0'){ ?>
                                     <?= $this->Form->postLink('<i class="fa fa-check">'.__('').'</i>',
 								['action' => 'changestatus', $post->id],
-								['escape' => false, 'confirm' => __('Are you sure you want to update # {0}?', $post->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
+								['escape' => false, 'confirm' => __('Are you sure you want to update this post?', $post->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
 
                                     <?}?>
                                     <?//= $this->Html->link(

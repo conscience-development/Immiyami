@@ -479,6 +479,11 @@ class PostsController extends AppController
             $post->user_id = $this->Auth->User('id');
             $this->loadModel('Users');
             $user = $this->Users->get($this->Auth->User('id'));
+
+            $user2 = $this->Users->get($post->user_id);
+            if($user2->sup_p =='1'){
+                $post->approved_date =date('Y-m-d H:i:s');
+            }
             if ($user->sup_p == '1') {
                 $post->status = '1';
             }

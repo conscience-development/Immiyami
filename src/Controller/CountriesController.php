@@ -35,41 +35,60 @@ class CountriesController extends AppController
 
     // Check if query parameters are present
     if (!empty($this->request->getQuery())) {
-        // Example: Filtering by name
-        if (!empty($this->request->getQuery('q'))) {
-            $searchTerm = $this->request->getQuery('q');
-            // Adjust the condition to match any relevant field in the PreferredCountries table
-            $conditions['OR'] = [
-                'Countries.name LIKE' => '%' . $searchTerm . '%',
-                // Add additional fields if needed
-            ];
-        }
 
-        // Add more conditions for additional filters as needed
-        // Example: Filtering by status
-        if (!empty($this->request->getQuery('q'))) {
-            $filter = explode('-', $this->request->getQuery('q'));
-            if ($filter[0] === 'status' && isset($filter[1])) {
-                $conditions['Countries.status'] = $filter[1];
-            }
-        }
-
-        // Add more conditions for additional filters as needed
-        // Example: Filtering by date range
         if (!empty($this->request->getQuery('daterange'))) {
             $daterange = explode('-', $this->request->getQuery('daterange'));
             $dateStart = date_create($daterange[0]);
             $dateEnd = date_create($daterange[1]);
             $conditions['Countries.created >='] = date_format($dateStart, "Y-m-d");
-            $conditions['Countries.created <='] = date_format($dateEnd, "Y-m-d");
+            $conditions['Countries  .created <='] = date_format($dateEnd, "Y-m-d");
             $this->set('setDaterange', $this->request->getQuery('daterange'));
         }
+
+
+        
+        // // Example: Filtering by name
+        // if (!empty($this->request->getQuery('q'))) {
+        //     $searchTerm = $this->request->getQuery('q');
+        //     // Adjust the condition to match any relevant field in the PreferredCountries table
+        //     $conditions['OR'] = [
+        //         'Countries.name LIKE' => '%' . $searchTerm . '%',
+        //         // Add additional fields if needed
+        //     ];
+        // }
+
+        // // Add more conditions for additional filters as needed
+        // // Example: Filtering by status
+        // if (!empty($this->request->getQuery('q'))) {
+        //     $filter = explode('-', $this->request->getQuery('q'));
+        //     if ($filter[0] === 'status' && isset($filter[1])) {
+        //         $conditions['Countries.status'] = $filter[1];
+        //     }
+        // }
+
+        // // Add more conditions for additional filters as needed
+        // // Example: Filtering by date range
+       
+    }
+    if($this->request->getQuery('q')){
+        $getStatus = explode('-',$this->request->getQuery(('q')));
+        if($getStatus[0] == 'status'){
+            $conditions['countries.status'] = $getStatus[1];
+            $query = $this->Countries
+                ->find('all')         
+                ->where($conditions);
+        }else{
+            $query = $this->Countries
+                ->find('search',['search'=>$this->request->getQueryParams()])
+                ->where($conditions);
+        }
+    }else{
+        $query = $this->Countries
+            ->find('search', ['search' => $this->request->getQueryParams()])
+            ->where($conditions);
     }
 
-    // Build the query with conditions
-    $query = $this->Countries
-        ->find('all')
-        ->where($conditions);
+    
 
     // Paginate the query results
     $this->set('countries', $this->paginate($query));

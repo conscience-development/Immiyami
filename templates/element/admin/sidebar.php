@@ -158,7 +158,11 @@
         <div class="dropdown header-profile2 ">
             <a href="/Users/dashboard" aria-expanded="false">
                 <div class="header-info2 text-center">
-                    <img src="/backend/images/profile/5.jpg" alt="" />
+                    <?if($Auth->photo) :?>
+                        <img src="/files/users/photo/<?=$Auth->photo_dir; ?>/<?= $Auth->photo; ?>" width="20" alt=""/>
+                    <?else:?>
+                        <img src="/backend/images/profile/5.jpg" alt="" />
+                    <?endif?>
                     <div class="sidebar-info">
                         <div>
                             <h5 class="font-w500 mb-0"><?=$Auth->first_name.' '.$Auth->last_name;?></h5>

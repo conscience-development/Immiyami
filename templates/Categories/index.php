@@ -26,7 +26,7 @@
 -->
                             <td><?= h($category->name) ?></td>
 
-                            <td><?= h($category->created) ?></td>
+                            <td><?=  date('Y/m/d H:i',strtotime($category->created)) ?></td>
 
 
                             <td class="actions">

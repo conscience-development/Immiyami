@@ -35,11 +35,9 @@
                             <td><input type="checkbox" class="checkbox_check_ind" val_id="<?=$article->id?>"></td>
                             <!--
                     <td><?= $this->Number->format($article->id) ?></td>
--->                     <?if(strlen($article->title)>30):?>
-                            <td><?=substr_replace($article->title, "...", 30)?></td>
-                        <?else:?>
+-->                     
                             <td><?=h($article->title)?></td>
-                        <?endif?>
+                    
                             <!--
                     <td><?= h($article->short_description) ?></td>
                     <td><?= h($article->description) ?></td>

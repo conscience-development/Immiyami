@@ -231,7 +231,7 @@ use Cake\ORM\TableRegistry;
                             } ?>
                         </li>
                         <li>
-                            <h6>Approved Date:</h6>
+                            <h6>Published Date:</h6>
                             <p>
                                 <?
                                 if (!empty($post->approved_date)) {

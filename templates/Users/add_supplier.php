@@ -43,7 +43,8 @@
 								<?
 								
 								echo $this->Form->control('category_id', ['required' => true, 'options' => $categories, 'empty' => true, 'class' => 'multi-select wide form-control','label'=>'Category *']);
-								echo $this->Form->control('country_id', ['required' => true, 'options' => $countries, 'empty' => true, 'class' => 'multi-select wide form-control','label'=>'Country *']);
+								echo $this->Form->control('Countries._ids', ['required' => true, 'options' => $countries, 'empty' => true, 'class' => 'multi-select wide form-control','label'=>'Country *','id'=>'countryId']);
+								// <? echo $this->Form->control('Countries._ids', ['required'=>true,'id'=>'countryId','options' => $countries123,'value'=>$countriesS,'multiple'=>true, 'empty' => true,'class'=>'multiselect wide form-control']);
 								//echo $this->Form->control('photo_dir',['class'=>'form-control']);
 								//~ echo $this->Form->control('last_login', ['empty' => true,'class'=>'form-control datepicker-default']);
 								//~ echo $this->Form->control('password_reset_token',['class'=>'form-control']);

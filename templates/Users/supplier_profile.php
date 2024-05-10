@@ -312,9 +312,7 @@
                                             <li>
                                                 <h5>Joined</h5>
                                                 <p>
-                                                    <?
-												$date=date_create($user->created);
-												echo date_format($date,"jS \of F Y");?>
+                                                    <?echo date('Y/m/d H.m',strtotime($user->created))?>
                                                 </p>
                                             </li>
 

@@ -12,9 +12,9 @@
                             <tr>
                                 <th id="th_checkbox"> </th>
                                 <th><?= $this->Paginator->sort('first_name') ?></th>
-                                <!--
-																<th><?= $this->Paginator->sort('last_name') ?></th>
--->
+                                
+								<th><?= $this->Paginator->sort('last_name') ?></th>
+
                                 <th><?= $this->Paginator->sort('email') ?></th>
                                 <!--
 																<th><?= $this->Paginator->sort('bio') ?></th>
@@ -54,6 +54,11 @@
                             <?else:?>
                                 <td><?=h($user->first_name)?></td>
                             <?endif?>
+                            <?if(strlen($user->last_name)>10):?>
+                                <td><?= substr_replace($user->last_name,"...",10) ?></td>
+                            <?else:?>
+                                <td><?=h($user->last_name)?></td>
+                            <?endif?>
                             <!--
                     <td><?= h($user->last_name) ?></td>
 -->
@@ -86,10 +91,17 @@
                     <td><?= $user->has('coupon') ? $this->Html->link($user->coupon->name, ['controller' => 'Coupons', 'action' => 'view', $user->coupon->id]) : '' ?></td>
                     
 -->
-                            <td><?=  date('Y/m/d H:m',strtotime($user->created)) ?></td>
+                            <td><?=  date('Y/m/d H:i',strtotime($user->created)) ?></td>
+                            <!-- <td><?($user->Created)?></td> -->
 
                             <td class="actions">
                                 <div class="d-flex">
+                                <? if($user->status == '0'){ ?>
+                                    <?= $this->Form->postLink('<i class="fa fa-check">'.__('').'</i>', 
+							['action' => 'changestatusUser', $user->id],
+							['escape' => false, 'confirm' => __('Are you sure you want to update # {0}?', $user->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
+
+                                    <?}?>
                                     <?= $this->Html->link(
 							'<i class="fas fa-eye">' . __('') . '</i>',
 							['action' => 'view', $user->id],
