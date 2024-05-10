@@ -56,10 +56,13 @@
 													//~ echo $this->Form->control('password_reset_token',['class'=>'form-control']);
 													//~ echo $this->Form->control('company_name',['class'=>'form-control']);
                                                     echo $this->Form->control('category_id', ['required'=>true,'options' => $categories, 'empty' => true,'class'=>'multi-select wide form-control','label'=>'Category *']);
-													echo $this->Form->control('country_id', ['required'=>true,'options' => $countries, 'empty' => true,'class'=>'multi-select wide form-control','label'=>'Country *']);
+													// echo $this->Form->control('country_id', ['required'=>true,'options' => $countries, 'empty' => true,'class'=>'multi-select wide form-control','label'=>'Country *']);
+                                                    echo $this->Form->control('Countries._ids', ['required' => true, 'options' => $countries,'values' => $countriesSS, 'class' => 'multi-select wide form-control','label'=>'Country *','id'=>'countryId','multiple'=>true]);
+                                                    // echo $this->Form->control('Countries._ids', ['required'=>true,'id'=>'countries','options' => $countries,'value'=>'','multiple'=>true, 'empty' => true,'class'=>'multiselect wide form-control']);
+                                                    
 													echo $this->Form->control('status',['required'=>true,'options' =>['0'=>'Inactive','1'=>'Active'] ,'class'=>'form-control']);
 													echo $this->Form->control('role',['type'=>'hidden','value'=>'supplier','class'=>'form-control']);
-													
+													debug($countriesSS)
 													//~ echo $this->Form->control('preferred_country_id', ['options' => $preferredCountries, 'empty' => true,'class'=>'multi-select wide form-control']);
 													// echo $this->Form->control('coupon_id', ['options' => $coupons, 'empty' => true,'class'=>'multi-select wide form-control']);
 												?>
