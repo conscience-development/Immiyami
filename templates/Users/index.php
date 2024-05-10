@@ -12,9 +12,9 @@
                             <tr>
                                 <th id="th_checkbox"> </th>
                                 <th><?= $this->Paginator->sort('first_name') ?></th>
-                                <!--
-																<th><?= $this->Paginator->sort('last_name') ?></th>
--->
+                                
+								<th><?= $this->Paginator->sort('last_name') ?></th>
+
                                 <th><?= $this->Paginator->sort('email') ?></th>
                                 <!--
 																<th><?= $this->Paginator->sort('bio') ?></th>
@@ -53,6 +53,11 @@
                                 <td><?= substr_replace($user->first_name,"...",10) ?></td>
                             <?else:?>
                                 <td><?=h($user->first_name)?></td>
+                            <?endif?>
+                            <?if(strlen($user->last_name)>10):?>
+                                <td><?= substr_replace($user->last_name,"...",10) ?></td>
+                            <?else:?>
+                                <td><?=h($user->last_name)?></td>
                             <?endif?>
                             <!--
                     <td><?= h($user->last_name) ?></td>
