@@ -21,6 +21,7 @@ use Cake\Http\Session\DatabaseSession;
  * @property \App\Model\Table\UsersTable $Users
  * @property \App\Model\Table\AccessTable $Access
  * @property \App\Model\Table\ControllerFuncTable $ControllerFunc
+ * @property \App\Model\Table\WorkingcountriesTable $WorkingCountries
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class UsersController extends AppController
@@ -659,10 +660,20 @@ class UsersController extends AppController
         'contain' => ['Categories', 'Countries', 'PreferredCountries', 'Coupons', 'Articles', 'Banners', 'Galleries', 'Payments', 'Posts'],
     ]);
 
+    $workingCountries = $this->Users->WorkingCountries->find()
+        ->select(['country_name' => 'Country.name'])
+        ->contain(['Country'])
+        ->where(['WorkingCountries.user_id' => $user->id])
+        ->toArray(); 
+    
+
     // Fetch all the access records related to the user
     $userAccess = $this->Users->Access->find()
         ->where(['user_id' => $user->id])
         ->toArray();
+
+    
+     
 
     // Fetch controller function details using raw SQL query
     $controllerFunctions = $this->Users->Access->find()
@@ -671,7 +682,7 @@ class UsersController extends AppController
         ->leftJoinWith('ControllerFunc')
         ->toArray();
 
-    $this->set(compact('user', 'userAccess', 'controllerFunctions'));
+    $this->set(compact('user', 'userAccess', 'controllerFunctions','workingCountries'));
 }
 
 
@@ -1334,6 +1345,17 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
+                $this->loadModel('Workingcountries');
+
+                    foreach ($this->request->getData('Countries')['_ids'] as $key => $value) {
+                        # code...
+                        $workingcountry = $this->Workingcountries->newEmptyEntity();
+                        $workingcountry->user_id = $user->id;
+                        $workingcountry->country_id = $value;
+                        if ($this->Workingcountries->save($workingcountry)) {
+                        }
+                    }
+                
                 $this->Flash->success(__('The supplier has been saved.'));
 
                 $mailer = new Mailer();
@@ -1487,8 +1509,11 @@ class UsersController extends AppController
 
                 return $this->redirect(['action' => 'supplier']);
             }
+     
             $this->Flash->error(__('The member could not be saved. Please, try again.'));
         }
+
+        
         $categories = $this->Users->Categories->find('list', ['limit' => 200])->all();
         $countries = $this->Users->Countries->find('list', ['limit' => 200])->all();
         $preferredCountries = $this->Users->PreferredCountries->find('list', ['limit' => 200])->all();
