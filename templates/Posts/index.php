@@ -97,7 +97,7 @@ use Cake\ORM\TableRegistry;
                                     <? if($post->status == '0' || $post->c_status == '0'){ ?>
                                     <?= $this->Form->postLink('<i class="fa fa-check">'.__('').'</i>',
 								['action' => 'changestatus', $post->id],
-								['escape' => false, 'confirm' => __('Are you sure you want to update # {0}?', $post->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
+								['escape' => false, 'confirm' => __('Are you sure you want to update this post?', $post->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
 
                                     <?}?>
                                     <?//= $this->Html->link(
