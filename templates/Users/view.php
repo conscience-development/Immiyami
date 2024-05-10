@@ -32,10 +32,26 @@
                             <th><?= __('Contact') ?></th>
                             <td><?= h($user->contact) ?></td>
                         </tr>
-                        <?php if ($user->role == 'supplier' || $user->role == 'member'): ?>
+                        <?php if ($user->role == 'member'): ?>
                             <tr>
                                 <th><?= __('Country') ?></th>
                                 <td><?= h($user->country->name) ?></td>
+                            </tr>
+                        <?php endif; ?>
+                        <?php if ($user->role == 'supplier'): ?>
+                            <tr>
+                                <th><?= __('Countries') ?></th>
+                                <td>
+                                    <?php foreach ($wc as $workingcountry): ?>
+                                        <?= $workingcountry->country->name ?><br>
+                                    <?php endforeach; ?>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                        <?php if ($user->role == 'supplier'): ?>
+                            <tr>
+                                <th><?= __('Category') ?></th>
+                                <td><?= h($user->category->name) ?></td>
                             </tr>
                         <?php endif; ?>
                         <?php if ($user->role == 'member'): ?>
