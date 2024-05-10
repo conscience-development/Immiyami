@@ -75,7 +75,7 @@ class CountriesController extends AppController
         if($getStatus[0] == 'status'){
             $conditions['countries.status'] = $getStatus[1];
             $query = $this->Countries
-                ->find('all')
+                ->find('all')         
                 ->where($conditions);
         }else{
             $query = $this->Countries
