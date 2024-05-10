@@ -22,6 +22,7 @@ use Cake\Http\Session\DatabaseSession;
  * @property \App\Model\Table\AccessTable $Access
  * @property \App\Model\Table\ControllerFuncTable $ControllerFunc
  * @property \App\Model\Table\WorkingcountriesTable $WorkingCountries
+ * @property \App\Model\Table\CountriesTable $Country
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class UsersController extends AppController
@@ -655,35 +656,44 @@ class UsersController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
-{
-    $user = $this->Users->get($id, [
-        'contain' => ['Categories', 'Countries', 'PreferredCountries', 'Coupons', 'Articles', 'Banners', 'Galleries', 'Payments', 'Posts'],
-    ]);
+    {
+        $user = $this->Users->get($id, [
+            'contain' => ['Categories', 'Countries', 'PreferredCountries', 'Coupons', 'Articles', 'Banners', 'Galleries', 'Payments', 'Posts'],
+        ]);
 
-    $workingCountries = $this->Users->WorkingCountries->find()
-        ->select(['country_name' => 'Country.name'])
-        ->contain(['Country'])
-        ->where(['WorkingCountries.user_id' => $user->id])
-        ->toArray(); 
-    
+        if ($user->role == 'supplier') {
 
-    // Fetch all the access records related to the user
-    $userAccess = $this->Users->Access->find()
-        ->where(['user_id' => $user->id])
-        ->toArray();
+            $this->loadModel('Workingcountries');
 
-    
-     
+            $workingcountries = $this->Workingcountries->find('all', [
+                'conditions' => ['user_id' => $user->id],
+                'contain' => ['Countries']
+            ]);
 
-    // Fetch controller function details using raw SQL query
-    $controllerFunctions = $this->Users->Access->find()
-        ->select(['id' => 'controller_func_id', 'controller' => 'ControllerFunc.controller','func'=>'ControllerFunc.func'])
-        ->where(['user_id' => $user->id])
-        ->leftJoinWith('ControllerFunc')
-        ->toArray();
+            $wc = $workingcountries->toArray();
 
-    $this->set(compact('user', 'userAccess', 'controllerFunctions','workingCountries'));
-}
+            $this->set(compact('user', 'userAccess', 'controllerFunctions', 'wc'));
+
+
+        }
+
+        // Fetch all the access records related to the user
+        $userAccess = $this->Users->Access->find()
+            ->where(['user_id' => $user->id])
+            ->toArray();
+
+
+
+
+        // Fetch controller function details using raw SQL query
+        $controllerFunctions = $this->Users->Access->find()
+            ->select(['id' => 'controller_func_id', 'controller' => 'ControllerFunc.controller', 'func' => 'ControllerFunc.func'])
+            ->where(['user_id' => $user->id])
+            ->leftJoinWith('ControllerFunc')
+            ->toArray();
+
+        $this->set(compact('user', 'userAccess', 'controllerFunctions'));
+    }
 
 
 
@@ -1296,7 +1306,7 @@ class UsersController extends AppController
     public function addSponsor()
     {
         $user = $this->Users->newEmptyEntity();
-        if ($this->request->is('post')) { 
+        if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The sponsor has been saved.'));
@@ -1345,27 +1355,27 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
+                
                 $this->loadModel('Workingcountries');
 
-                    foreach ($this->request->getData('Countries')['_ids'] as $key => $value) {
-                        # code...
-                        $workingcountry = $this->Workingcountries->newEmptyEntity();
-                        $workingcountry->user_id = $user->id;
-                        $workingcountry->country_id = $value;
-                        if ($this->Workingcountries->save($workingcountry)) {
-                        }
+                foreach ($this->request->getData('Countries')['_ids'] as $key => $value) {
+                    # code...
+                    $workingcountry = $this->Workingcountries->newEmptyEntity();
+                    $workingcountry->user_id = $user->id;
+                    $workingcountry->country_id = $value;
+                    if ($this->Workingcountries->save($workingcountry)) {
                     }
-                
+                }
                 $this->Flash->success(__('The supplier has been saved.'));
 
                 $mailer = new Mailer();
-                        $mailer->setEmailFormat('html')
-                            ->setTo($user->email)
-                            ->setSubject('ImmiYami : Added as an Supplier ')
-                            ->setViewVars(['name' => $user->first_name . ' ' . $user->last_name, 'email' => $user->email])
-                            ->viewBuilder()
-                            ->setTemplate('adminverify');
-                        $mailer->deliver();
+                $mailer->setEmailFormat('html')
+                    ->setTo($user->email)
+                    ->setSubject('ImmiYami : Added as an Supplier ')
+                    ->setViewVars(['name' => $user->first_name . ' ' . $user->last_name, 'email' => $user->email])
+                    ->viewBuilder()
+                    ->setTemplate('adminverify');
+                $mailer->deliver();
 
                 return $this->redirect(['action' => 'supplier']);
             }
@@ -1502,23 +1512,53 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => [],
         ]);
+        $this->loadModel('Workingcountries');
+
+        $workingcountries = $this->Workingcountries->find('all', [
+            'conditions' => ['user_id' => $user->id],
+        ]);
+
+        
+
+        $countriesSS = [];
+        foreach ($workingcountries as $workingcountry) {
+            $countriesSS[] = $workingcountry->id;
+        }
+
+        // echo var_dump($countriesSS);
+        // die;
+
+
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
+
+                $this->loadModel('Workingcountries');
+                $this->Workingcountries->deleteAll(['user_id' => $id]);
+                $this->loadModel('Workingcountries');
+                foreach ($this->request->getData('Countries')['_ids'] as $key => $value) {
+                    # code...
+                    $workingcountry = $this->Workingcountries->newEmptyEntity();
+                    $workingcountry->user_id = $user->id;
+                    $workingcountry->country_id = $value;
+                    if ($this->Workingcountries->save($workingcountry)) {
+                    }
+                }
                 $this->Flash->success(__('The member has been saved.'));
 
                 return $this->redirect(['action' => 'supplier']);
             }
-     
+
             $this->Flash->error(__('The member could not be saved. Please, try again.'));
         }
 
-        
+
         $categories = $this->Users->Categories->find('list', ['limit' => 200])->all();
         $countries = $this->Users->Countries->find('list', ['limit' => 200])->all();
         $preferredCountries = $this->Users->PreferredCountries->find('list', ['limit' => 200])->all();
         $coupons = $this->Users->Coupons->find('list', ['limit' => 200])->all();
-        $this->set(compact('user', 'categories', 'countries', 'preferredCountries', 'coupons'));
+        $this->set(compact('user', 'categories', 'countries', 'preferredCountries', 'coupons', 'countriesSS'));
     }
 
     /**
