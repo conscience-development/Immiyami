@@ -23,7 +23,7 @@
 																				</tr>
 																																												<tr>
 													<th><?= __('Created') ?></th>
-													<td><?= h($category->created) ?></td>
+													<td><?=  date('Y/m/d H:i',strtotime($category->created)) ?></td>
 												</tr>
 																																			</table>
 																																																			<div class="related">
@@ -73,7 +73,7 @@
 																							<td><?= h($users->country_id) ?></td>
 																							<td><?= h($users->preferred_country_id) ?></td>
 																							<td><?= h($users->coupon_id) ?></td>
-																							<td><?= h($users->created) ?></td>
+																							<td><?=  date('Y/m/d H:i',strtotime($users->created)) ?></td>
 																															<td class="actions">
 																<?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
 																<?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>
