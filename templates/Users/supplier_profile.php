@@ -1125,7 +1125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var maxImages = 4;
     var fileInput = document.getElementById('editpostPhotos');
     
-    // Update file input functionality
+    // Update file input functionalityEdi
     function updateFileInput() {
         var uploadedImagesCount = fileInput.files.length;
         if (uploadedImagesCount >= maxImages || uploadedImagesCount >= 2) {

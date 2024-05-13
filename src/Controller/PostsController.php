@@ -668,7 +668,19 @@ class PostsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $post = $this->Posts->patchEntity($post, $this->request->getData());
             $post->status = '0';
+            // var_dump($post);
+            // die();
+            $tempUser= $this->Users->get($this->Auth->User('id'));
+            if($tempUser->role=="superuser" || $tempUser->role=="admin"){
+                
+            }else{
+                $post->user_id = $this->Auth->User('id');
+                $post->user = $tempUser;
+                // var_dump("This is for others ");
+                // die();
+            }
             if ($this->Posts->save($post)) {
+
                 $this->loadModel('PostImages');
                 $this->loadModel('PostsCategories');
                 $this->loadModel('PostsCountries');
