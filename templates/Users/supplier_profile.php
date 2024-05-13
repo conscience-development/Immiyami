@@ -729,8 +729,9 @@
                                         </div>
                                         <?if($user->role =='superuser'):?>
                                             <div class="col-lg-12">
-                                                <? echo $this->Form->control('supplier_id', ['options' => $users11, 'empty' => true, 'class' => 'multi-select wide form-control','label'=>'Supplier *']);?>
+                                                <? echo $this->Form->control('user_id', ['options' => $users11, 'empty' => true, 'class' => 'multi-select wide form-control','label'=>'Supplier *']);?>
                                             </div>
+                                        <?else:?>
                                             <div class="hidden">
                                                 <?= $this->Form->control('user_id', ['type' => 'hidden', 'value' => 1, 'empty' => true, 'class' => 'multi-select wide form-control']) ?>
                                             </div>
@@ -1117,4 +1118,26 @@ contact.addEventListener('input', function(event) {
     contact.value = inputvalue;
 })
 
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var maxImages = 4;
+    var fileInput = document.getElementById('editpostPhotos');
+    
+    // Update file input functionality
+    function updateFileInput() {
+        var uploadedImagesCount = fileInput.files.length;
+        if (uploadedImagesCount >= maxImages || uploadedImagesCount >= 2) {
+            fileInput.disabled = true;
+        } else {
+            fileInput.disabled = false;
+        }
+    }
+    
+    // Listen for changes in the file input
+    fileInput.addEventListener('change', function() {
+        updateFileInput();
+    });
+});
 </script>
