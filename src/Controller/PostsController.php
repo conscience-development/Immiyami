@@ -483,10 +483,12 @@ class PostsController extends AppController
             $tempUser= $this->Users->get($this->Auth->User('id'));
             if($tempUser->role=="superuser" || $tempUser->role=="admin"){
                 $post->user_id = $post->supplier_id;
+                $post->user = $this->Users->get($post->supplier_id);
                 // var_dump($post->user_id);
                 // die();
             }else{
                 $post->user_id = $this->Auth->User('id');
+                $post->user =  $tempUser;
                 // var_dump("This is for others ");
                 // die();
             }
