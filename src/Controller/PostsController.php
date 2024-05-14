@@ -533,10 +533,11 @@ class PostsController extends AppController
                     $mailer = new Mailer();
                         $mailer->setEmailFormat('html')
                                     ->setTo($post->user->email)
-                                    ->setSubject('ImmiYami : Payment Success')
+                                    ->setSubject('ImmiYami : posted successfully')
                                     ->setViewVars([
                                         'title' => $post->title,
-                                        'created_date'=>$post->created
+                                        'created_date'=>$post->created,
+                                        'name'=>$post->user->first_name
                                         ])
                                     ->viewBuilder()
                                         ->setTemplate('postp');
