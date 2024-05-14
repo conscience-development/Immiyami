@@ -7,10 +7,6 @@
         <th width="30%">Post Title:</th>
         <td width="70%"><?php echo $title;?> </td>
     </tr>
-    <tr>
-        <th width="30%">Created Date:</th>
-        <td width="70%"><?php echo date('Y/m/d H:i',strtotime($created_date->created))?> </td>
-    </tr>
   </tbody>
 </table>
 <hr>

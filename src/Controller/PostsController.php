@@ -536,7 +536,6 @@ class PostsController extends AppController
                                     ->setSubject('ImmiYami : posted successfully')
                                     ->setViewVars([
                                         'title' => $post->title,
-                                        'created_date'=>$post->created,
                                         ])
                                     ->viewBuilder()
                                         ->setTemplate('postp');
