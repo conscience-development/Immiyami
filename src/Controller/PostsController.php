@@ -533,7 +533,7 @@ class PostsController extends AppController
                     $mailer = new Mailer();
                         $mailer->setEmailFormat('html')
                                     ->setTo($post->user->email)
-                                    ->setSubject('ImmiYami : posted successfully')
+                                    ->setSubject('ImmiYami : post Success')
                                     ->setViewVars([
                                         'title' => $post->title,
                                         ])
