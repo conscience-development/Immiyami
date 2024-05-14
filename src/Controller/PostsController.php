@@ -529,6 +529,24 @@ class PostsController extends AppController
                     }
                 }
 
+                if ($user->sup_p == '1') {
+                    $mailer = new Mailer();
+                        $mailer->setEmailFormat('html')
+                                    ->setTo($post->user->email)
+                                    ->setSubject('ImmiYami : Payment Success')
+                                    ->setViewVars([
+                                        'title' => $post->title,
+                                        'created_date'=>$post->created
+                                        ])
+                                    ->viewBuilder()
+                                        ->setTemplate('postp');
+
+                        $mailer->deliver();
+
+                        return $this->redirect('/post-view?post_id=' . preg_replace('/[^\da-z]/i', '-', $post->title) . '-' . $post->id . '&view_type=profile');
+                }
+
+
                 $mailer = new Mailer();
                 $mailer->setEmailFormat('text')
                     ->setTo($user->email)
