@@ -235,9 +235,13 @@ class ArticlesController extends AppController
 {
     $article = $this->Articles->newEmptyEntity();
     if ($this->request->is('post')) {
-        
+        // var_dump($this->request->getData()['short_description']);die;
         $article = $this->Articles->patchEntity($article, $this->request->getData());
         $article->user_id = $this->Auth->User('id');
+        
+        if($this->request->getData()['short_description']==null){
+            $article->short_description = "";
+        }
 
         if ($this->Articles->save($article)) {
             $this->Flash->success(__('The article has been saved.'));

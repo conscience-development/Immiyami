@@ -73,7 +73,7 @@
 
                             <td>
                                 <div style="display: inline-block;">
-                                    <?= $article->created ?>
+                                    <?=  date('Y/m/d H:i',strtotime($article->created)) ?>
                                 </div>
                             </td>
 

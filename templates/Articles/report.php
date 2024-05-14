@@ -43,7 +43,7 @@
                                     <?php endif; ?>
                                 </td>
                                 <td><?= $article->has('user') ? $this->Html->link($article->user->first_name, ['controller' => 'Users', 'action' => 'view', $article->user->id]) : '' ?></td>
-                                <td><?= date('Y/m/d H:s', strtotime($article->created)) ?></td>
+                                <td><?= date('Y/m/d H:i', strtotime($article->created)) ?></td>
                                 <td class="actions">
                                     <div class="d-flex">
                                         <?= $this->Html->link(

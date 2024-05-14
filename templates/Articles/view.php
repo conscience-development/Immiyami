@@ -23,7 +23,7 @@
               <?= __('Created') ?>:
             </strong>
             <span>
-              <?= date('Y/m/d H:s', strtotime($article->created)) ?>
+              <?= date('Y/m/d H:i', strtotime($article->created)) ?>
             </span>
           </div>
           <?php if ($article->status == 1): ?>
