@@ -537,7 +537,6 @@ class PostsController extends AppController
                                     ->setViewVars([
                                         'title' => $post->title,
                                         'created_date'=>$post->created,
-                                        'name'=>$post->user->first_name
                                         ])
                                     ->viewBuilder()
                                         ->setTemplate('postp');

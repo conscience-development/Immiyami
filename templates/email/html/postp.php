@@ -1,4 +1,3 @@
-<p>Dear <?php echo $name;?>,</p>
 <p>Your advertisement has been posted successfully</p>
 <hr>
 <h3>Post Details:</h3>
