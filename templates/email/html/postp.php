@@ -1,5 +1,5 @@
 <p>Dear <?php echo $name;?>,</p>
-<p>Your advertisement has been posted</p>
+<p>Your advertisement has been posted successfully</p>
 <hr>
 <h3>Post Details:</h3>
 <table border="0" cellpadding="0" cellspacing="0" class="">
@@ -10,7 +10,7 @@
     </tr>
     <tr>
         <th width="30%">Created Date:</th>
-        <td width="70%"><?php echo $created_date;?> </td>
+        <td width="70%"><?php echo date('Y/m/d H:i',strtotime($created_date->created))?> </td>
     </tr>
   </tbody>
 </table>
