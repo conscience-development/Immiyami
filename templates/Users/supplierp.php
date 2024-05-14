@@ -84,18 +84,18 @@
                     <td><?= $user->has('coupon') ? $this->Html->link($user->coupon->name, ['controller' => 'Coupons', 'action' => 'view', $user->coupon->id]) : '' ?></td>
                     <td><?= h($user->created) ?></td>
 -->
-                            <td><?= date('Y/m/d H:s',strtotime($user->created)) ?></td>
+                            <td><?= date('Y/m/d H:i',strtotime($user->created)) ?></td>
                             <td class="actions">
                                 <div class="d-flex">
                                     <? if($user->sup_p == '0'){ ?>
                                     <?= $this->Form->postLink('<i class="fa fa-check">'.__('').'</i>',
 							['action' => 'changestatussupplierp', $user->id,'1'],
-							['escape' => false, 'confirm' => __('Are you sure you want to update # {0}?', $user->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
+							['escape' => false, 'confirm' => __('Are you sure you want to update ?', $user->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
 
                                     <?}else{?>
                                     <?= $this->Form->postLink('<i class="fa fa-times">'.__('').'</i>',
 							['action' => 'changestatussupplierp', $user->id,'0'],
-							['escape' => false, 'confirm' => __('Are you sure you want to update # {0}?', $user->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
+							['escape' => false, 'confirm' => __('Are you sure you want to update ?', $user->id),'class' => 'btn btn-danger shadow btn-xs sharp me-1']) ?>
 
 
                                     <?}?>

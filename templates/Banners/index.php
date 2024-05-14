@@ -54,7 +54,7 @@
                             <!--
                     <td><?= h($banner->photo) ?></td>
                     <td><?= h($banner->photo_dir) ?></td>
-                    <td><?= h(date('Y/m/d H:s', strtotime($banner->start_date))) ?></td>
+                    <td><?= h(date('Y/m/d H:i', strtotime($banner->start_date))) ?></td>
 -->                         
                             <td><?= h(date('Y/m/d',strtotime($banner->start_date)))?></td>
                             <td><?= h(date('Y/m/d',strtotime($banner->end_date)))?></td>

@@ -70,7 +70,7 @@
                             </td>
 
 
-                            <td><?= date('Y/m/d H:s',strtotime(($banner->created))) ?></td>
+                            <td><?= date('Y/m/d H:i',strtotime(($banner->created))) ?></td>
 
 
                             <td class="actions">
