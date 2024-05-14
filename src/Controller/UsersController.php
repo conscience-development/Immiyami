@@ -1729,62 +1729,62 @@ class UsersController extends AppController
         $user2 = $this->Users->get($user_id2[0]);
         // $user_id = intval($user_id2[0]);
         // $user2 = $this->Users->get($user_id);
+        
+        // var_dump($user_id2);die();
+        if($user_id2[1] == date('Ymd')){
+            
+        }else{
+            $this->Flash->error(__('Password reset link not valid. Please, try again.'));
+            return $this->redirect(['action' => 'login']);
+        }
+		
+		if ($this->request->is('post')) {
+            if ($this->request->getQuery('key')) {
+                if ($this->request->getData('password') == $this->request->getData('c_password')) {
 
-        // var_dump($user_id2);
-        // die();
-        if ($user_id2[1] == date('Ymd')) {
+                    $encryption = $this->request->getQuery('key');
+                    // Non-NULL Initialization Vector for decryption
+                    $decryption_iv = '1234567891011121';
+                    $ciphering = "AES-128-CTR";
+                    $options = 0;
 
-        } else {
-            // $this->Flash->error(__('Password reset link not valid. Please, try again.'));
-            // return $this->redirect(['action' => 'login']);
-            if ($this->request->is('post')) {
-                if ($this->request->getQuery('key')) {
-                    if ($this->request->getData('password') == $this->request->getData('c_password')) {
+                    // Store the decryption key
+                    $decryption_key = "ImmiYamiPasswordResetKey" . date('Ymd');
 
-                        $encryption = $this->request->getQuery('key');
-                        // Non-NULL Initialization Vector for decryption
-                        $decryption_iv = '1234567891011121';
-                        $ciphering = "AES-128-CTR";
-                        $options = 0;
+                    // Use openssl_decrypt() function to decrypt the data
+                    $decryption = openssl_decrypt(
+                        $encryption,
+                        $ciphering,
+                        $decryption_key,
+                        $options,
+                        $decryption_iv
+                    );
 
-                        // Store the decryption key
-                        $decryption_key = "ImmiYamiPasswordResetKey" . date('Ymd');
+                    // The decrypted string
+                    $user_id = explode('-', $decryption);
 
-                        // Use openssl_decrypt() function to decrypt the data
-                        $decryption = openssl_decrypt(
-                            $encryption,
-                            $ciphering,
-                            $decryption_key,
-                            $options,
-                            $decryption_iv
-                        );
-
-                        // The decrypted string
-                        $user_id = explode('-', $decryption);
-
-                        $user = $this->Users->get($user_id[0]);
-                        if ($user->status == '0') {
-                            $this->Flash->error('Your account not activated yet. Please chack your email and activate your account.');
-                            return $this->redirect(['action' => 'login']);
-                        }
-                        $user->password = $this->request->getData('password');
-                        if ($this->Users->save($user)) {
-                            $this->Flash->success(__('Password has been changed. Please Login'));
-                        } else {
-                            $this->Flash->error(__('Password could not be changed. Please, try again.'));
-                        }
-                    } else {
-                        $this->Flash->error(__('Password mismatch. Please, try again.'));
+                    $user = $this->Users->get($user_id[0]);
+                    if ($user->status == '0') {
+                        $this->Flash->error('Your account not activated yet. Please chack your email and activate your account.');
+                        return $this->redirect(['action' => 'login']);
                     }
-
-
-                    return $this->redirect(['action' => 'login']);
+                    $user->password = $this->request->getData('password');
+                    if ($this->Users->save($user)) {
+                        $this->Flash->success(__('Password has been changed. Please Login'));
+                    } else {
+                        $this->Flash->error(__('Password could not be changed. Please, try again.'));
+                    }
                 } else {
-                    $this->Flash->error(__('Something went wrong. Please, try again.'));
-                    return $this->redirect(['action' => 'login']);
+                    $this->Flash->error(__('Password mismatch. Please, try again.'));
                 }
-                $this->Flash->error('Your username or password is incorrect.');
+
+
+                return $this->redirect(['action' => 'login']);
+            } else {
+                $this->Flash->error(__('Something went wrong. Please, try again.'));
+                return $this->redirect(['action' => 'login']);
             }
+            $this->Flash->error('Your username or password is incorrect.');
         }
 
         $this->viewBuilder()->setLayout('login');

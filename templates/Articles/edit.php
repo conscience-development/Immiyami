@@ -49,15 +49,16 @@
                 <p class="form-text text-muted">
                     <?= __('Leave empty to keep existing photo.') ?>
                   </p>
-                  <?php if ($article->photo): ?>
-                    <div class="existing-image">
-                      <img src="/files/articles/photo/<?= $article->photo_dir; ?>/square_<?= $article->photo; ?>" alt="<?= h($article->title) ?>" style="width: 250px; height: auto;"  />
-                    </div>
-                  <?else :?>
-                    <div class="existing-image">
-                      <img src="/files/articles/photo/newsview.jpg" alt="<?= h($article->title) ?>" style="width: 250px; height: auto;" />
-                    </div>
-                  <?php endif; ?>
+                  
+                   <?php if($article->short_description){  ?>
+                                    <img src="<?=$article->short_description;?>" class="existing-image" style="width: 250px; height: auto;" />
+                        <?php }elseif($article->photo){  ?>
+                                    <img class="existing-image" src="/files/articles/photo/<?= $article->photo_dir; ?>/square_<?= $article->photo; ?>" alt="<?= h($article->title) ?>" style="width: 250px; height: auto;"  />
+                        <?php    }else{ ?>
+                                    <img class="existing-image" src="/files/articles/photo/newsview.jpg" alt="<?= h($article->title) ?>" style="width: 250px; height: auto;" />
+                        <?php    } ?>
+                        
+                        
                 
                   <?= $this->Form->control('photo', ['type' => 'file','id' => 'articlePhoto', 'class' => 'form-control','accept' => 'image/*']); ?>
                 </div>

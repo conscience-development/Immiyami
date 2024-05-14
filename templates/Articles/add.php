@@ -28,9 +28,10 @@
 												<fieldset>
 												<?php
 													echo $this->Form->control('title',['class'=>'form-control','label'=>'Title *','id'=>'title','required'=>true]);
-													// echo $this->Form->control('short_description',['label'=>'Short Description (Words Only)','class'=>'form-control']);
+													echo $this->Form->control('short_description',['required' => false,'label'=>'ddd','class'=>'form-control','id'=>'short_description','type' => 'hidden']);
                                                     echo $this->Form->control('description',['class'=>'form-control','label'=>'Description']);                                                    ?>
                                                     <br/>
+                                                    <button id="gen-thumb">Genarate Thumbnail</button>
                                                     <p class="form-text text-muted" style="margin:8px">
                                                         <?= __('Leave empty to keep existing photo.') ?>
                                                     </p>
@@ -75,7 +76,7 @@
     const title =document.getElementById('title');
     const descprition =document.getElementById('descprition');
     const status =document.getElementById('status');
-
+    const gen_thumb =document.getElementById('gen-thumb');
 
     photoInput.addEventListener('change', function(event) {
         const file = event.target.files[0];
@@ -92,7 +93,25 @@
             // Set default image if no file selected
             previewImage.src = "/newsview.jpg"; // Replace 'default_image.jpg' with your default image path
         }
+        
     });
+    
+    gen_thumb.addEventListener('click', function() {
+        event.preventDefault();
+        var oembedUrl = document.getElementsByTagName('iframe')[0].getAttribute('src');
+        document.getElementById('preview-image').src = getYouTubeThumbnail(oembedUrl)
+        var textarea = document.getElementById('short_description')
+        textarea.value = getYouTubeThumbnail(oembedUrl)
+    });
+    
+    function getYouTubeThumbnail(embedUrl) {
+        const videoId = embedUrl.match(/\/embed\/([^/?]+)/)[1]
+        // Construct thumbnail URL
+        var thumbnailUrl = 'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg';
+        // Return the thumbnail URL
+        return thumbnailUrl;
+    }
+    
 
     submitBtn.addEventListener('click', function() {
         // if (titleInput.value == '',description.value =='',status.value =='') {

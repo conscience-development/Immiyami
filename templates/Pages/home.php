@@ -21,13 +21,12 @@
 							<? foreach($home_articles as $harticle){?>
                             <div class="blog-card">
                                 <div class="blog-img">
-                                <?php
-                                            if($harticle->photo_dir){ ?>
+                                <?php if($harticle->short_description){  ?>
+                                                <img src="<?=$harticle->short_description;?>"/>
+                                    <?php }elseif($harticle->photo_dir){  ?>
                                                 <img src="/files/articles/photo/<?=$harticle->photo_dir;?>/<?=$harticle->photo;?>" alt="<?=$harticle->title;?>">
-
                                     <?php    }else{ ?>
-                                            <img src="/front/images/news.jpg">
-                                                
+                                                <img src="/front/images/news.jpg">
                                     <?php    } ?>
                                     <!-- <img src="/files/articles/photo/<?=$harticle->photo_dir;?>/<?=$harticle->photo;?>" alt="<?=$harticle->title;?>"> -->
                                     <div class="blog-overlay">
