@@ -11,7 +11,7 @@
               <?= __('Created') ?>:
             </strong>
             <span>
-              <?= date('Y/m/d H:s', strtotime($banner->created)) ?>
+              <?= date('Y/m/d H:i', strtotime($banner->created)) ?>
             </span>
           </div>
           <?php if ($banner->status == 1): ?>
