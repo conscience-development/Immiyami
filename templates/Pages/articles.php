@@ -55,16 +55,17 @@
                                     <ul class="blog-suggest">
 										<? foreach($popular_articles as $article){?>
                                         <li>
-                                            <div class="suggest-img">
+                                            <div class="suggest-img" >
+
+                                                
                                                 <a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $article->title);?>-<?=$article->id;?>">
-												<?php
-                                                        if($article->photo_dir){ ?>
-                                                         <img src="/files/articles/photo/<?=$article->photo_dir;?>/<?=$article->photo;?>" alt="<?=$article->title;?>">
-
-                                                <?php    }else{ ?>
-                                                        <img src="/front/images/news.jpg">
-
-                                                <?php    } ?>
+												<?php if($article->short_description){  ?>
+                                                <img src="<?=$article->short_description;?>"/>
+                                    <?php }elseif($article->photo_dir){  ?>
+                                                <img src="/files/articles/photo/<?=$article->photo_dir;?>/<?=$article->photo;?>" alt="<?=$article->title;?>">
+                                    <?php    }else{ ?>
+                                                <img src="/front/images/news.jpg">
+                                    <?php    } ?>
 
                                                 </a>
                                             </div>
@@ -122,13 +123,13 @@
                             <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
                                 <div class="blog-card mb-5">
                                     <div class="blog-img">
-                                    <?php
-                                            if($article->photo_dir){ ?>
+                        
+                                    <?php if($article->short_description){  ?>
+                                                <img src="<?=$article->short_description;?>"/>
+                                    <?php }elseif($article->photo_dir){  ?>
                                                 <img src="/files/articles/photo/<?=$article->photo_dir;?>/<?=$article->photo;?>" alt="<?=$article->title;?>">
-
                                     <?php    }else{ ?>
-                                            <img src="/front/images/news.jpg">
-
+                                                <img src="/front/images/news.jpg">
                                     <?php    } ?>
                                         <div class="blog-overlay">
 											<span class="safety">NEWS</span>
@@ -148,7 +149,7 @@
                                             <h4><a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $article->title);?>-<?=$article->id;?>">
                                             <?=($article->title)?> <!-- Apeksha Remove the Titel Shoten -->
 											</a></h4>
-                                            <p><?=substr_replace($article->short_description, "...", 70)?></p>
+                                           
                                         </div>
 
                                         <a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $article->title);?>-<?=$article->id;?>" class="blog-read">
@@ -181,3 +182,5 @@
         <!--=========================================
                         NEWS LIST PART END
         ===========================================-->
+        
+        

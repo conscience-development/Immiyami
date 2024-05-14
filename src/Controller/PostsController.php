@@ -421,7 +421,10 @@ class PostsController extends AppController
         if ($this->request->is('post')) {
             $post = $this->Posts->patchEntity($post, $this->request->getData());
             $post->status = '0';
-            $post->c_status ='0';
+            $post->user_id = $post->supplier_id;
+            $this->loadModel('Users');
+            $user = $this->Users->get($post->supplier_id);
+            $post->user = $user;
             if ($this->Posts->save($post)) {
                 // $users12 = $this->Posts->Users->find('list', ['limit' => 200, 'conditions' => ['role' => 'supplier', 'status' => '1','id'=>$post->user_id]])->all();
                 $this->Flash->success(__('The post has been saved.'));
@@ -477,9 +480,19 @@ class PostsController extends AppController
         if ($this->request->is('post')) {
             $post = $this->Posts->patchEntity($post, $this->request->getData());
             $post->user_id = $this->Auth->User('id');
-            $this->loadModel('Users');
+            $tempUser= $this->Users->get($this->Auth->User('id'));
+            if($tempUser->role=="superuser" || $tempUser->role=="admin"){
+                $post->user_id = $post->supplier_id;
+                $post->user = $this->Users->get($post->supplier_id);
+                // var_dump($post->user_id);
+                // die();
+            }else{
+                $post->user_id = $this->Auth->User('id');
+                $post->user =  $tempUser;
+                // var_dump("This is for others ");
+                // die();
+            }
             $user = $this->Users->get($this->Auth->User('id'));
-
             $user2 = $this->Users->get($post->user_id);
             if($user2->sup_p =='1'){
                 $post->approved_date =date('Y-m-d H:i:s');
@@ -657,7 +670,19 @@ class PostsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $post = $this->Posts->patchEntity($post, $this->request->getData());
             $post->status = '0';
+            // var_dump($post);
+            // die();
+            $tempUser= $this->Users->get($this->Auth->User('id'));
+            if($tempUser->role=="superuser" || $tempUser->role=="admin"){
+                
+            }else{
+                $post->user_id = $this->Auth->User('id');
+                $post->user = $tempUser;
+                // var_dump("This is for others ");
+                // die();
+            }
             if ($this->Posts->save($post)) {
+
                 $this->loadModel('PostImages');
                 $this->loadModel('PostsCategories');
                 $this->loadModel('PostsCountries');

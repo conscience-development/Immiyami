@@ -61,14 +61,14 @@
                                         <li>
                                             <div class="suggest-img">
                                                 <a href="/pages/article-view?page_id=<?=preg_replace('/[^\da-z]/i', '-', $articles->title);?>-<?=$articles->id;?>">
-                                                <?php
-                                                    if($articles->photo_dir){ ?>
-                                                        <img src="/files/articles/photo/<?=$articles->photo_dir;?>/<?=$articles->photo;?>" alt="<?=$articles->title;?>">
-
-                                            <?php    }else{ ?>
-                                                    <img src="/front/images/news.jpg">
-
-                                            <?php    } ?>
+                                                    <?php
+                                                        if($articles->photo_dir){ ?>
+                                                            <img src="/files/articles/photo/<?=$articles->photo_dir;?>/<?=$articles->photo;?>" alt="<?=$articles->title;?>">
+    
+                                                    <?php    }else{ ?>
+                                                        <img src="/front/images/news.jpg">
+    
+                                                    <?php    } ?>
                                                 </a>
                                             </div>
                                             <div class="suggest-content">
@@ -138,15 +138,7 @@
                             </li> -->
 
                         </ul>
-                        <div class="blog-details-image">
-                        <?php
-                                                    if($article->photo_dir){ ?>
-                                                        <img src="/files/articles/photo/<?=$article->photo_dir;?>/<?=$article->photo;?>" alt="<?=$article->title;?>">
-
-                                            <?php    }else{ ?>
-                                                    <img src="/front/images/newsview.jpg">
-
-                                            <?php    } ?></div>
+                        
                         <div class="blog-details-content">
                             <div class="description">
                                 <?=($article->description)?> <!-- Apeksha Remove the Titel Shoten -->
@@ -163,3 +155,4 @@
         <!--=========================================
                     BLOG DETAILS PART END
         ===========================================-->
+        

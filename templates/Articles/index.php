@@ -43,7 +43,9 @@
                     <td><?= h($article->description) ?></td>
 -->
                             <td>
-                                <? if($article->photo_dir){ ?>
+                                <? if($article->short_description){ ?>
+                                     <img src="<?=$article->short_description;?>" style="width: 200px;height: 112px;"/>
+                                <? }else if($article->photo_dir){ ?>
                                 <div class="table-pic">
                                     <img
                                         src="/files/articles/photo/<?=$article->photo_dir;?>/square_<?=$article->photo;?>" />
@@ -71,7 +73,7 @@
 
                             <td>
                                 <div style="display: inline-block;">
-                                    <?= date('Y/m/d H:s', strtotime($article->created)) ?>
+                                    <?=  date('Y/m/d H:i',strtotime($article->created)) ?>
                                 </div>
                             </td>
 
